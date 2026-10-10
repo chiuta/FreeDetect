@@ -40,8 +40,13 @@ Tastatura: Enter este folosit în câmpul generatorului de citări; nu există a
 
 - Local: în `localStorage` se reține doar limba interfeței (`fdh_lang`). Textul tău nu este salvat.
 - Textul lipit nu este trimis nicăieri de aplicație. Singurele cereri de rețea ale paginii sunt cele ale generatorului de citări, la acționarea lui: `api.crossref.org` (DOI și scanare) și `openlibrary.org` (ISBN).
+- Cererile către Crossref conțin DOI-ul interogat, adresa ta IP și parametrul `mailto=alexio@trom.tf` (adresa de contact a autorului, folosită pentru „polite pool”); cele către OpenLibrary conțin ISBN-ul și IP-ul. „Scan input text” trimite către Crossref doar DOI-urile găsite în text, nu textul întreg.
 - Când folosești „Check here", textul ajunge, prin lipirea ta, la serviciul terț ales și intră sub politica acestuia.
 - Pagina conține link-uri (nu cereri automate) către zeci de servicii terțe, către Patreon, Buy Me a Coffee și site-urile autorului.
+
+## Avertisment
+
+Instrumentele listate sunt servicii terțe; rezultatele detectoarelor de plagiat și de text generat de AI pot fi eronate (false pozitive), mai ales pentru română, și nu constituie dovadă. Catalogul include și instrumente de tip „humanizer”/parafrazare, listate ca atare, fără a recomanda eludarea regulilor de integritate academică. Mărcile aparțin proprietarilor lor.
 
 ## Rulare locală / offline
 
@@ -49,7 +54,7 @@ Descarcă repository-ul (fișierul `index.html` și directorul `vendor/`) și de
 
 ## Licență
 
-Licența nu este încă declarată explicit în acest repository; vezi nota din aplicație. Aplicația însăși indică: „CC0 1.0 (Public Domain Dedication)".
+CC0 1.0 Universal (domeniu public), conform antetului aplicației — vezi fișierul LICENSE. Atenție: directorul `vendor/` conține biblioteci terțe cu licențele lor, care nu sunt acoperite de CC0 — `pdfjs/` (Mozilla pdf.js 3.x, Apache-2.0, conform antetului fișierului) și `mammoth.browser.min.js` (mammoth.js; licența nu este inclusă în fișier, verific-o în proiectul sursă).
 
 ## Autor
 
@@ -58,3 +63,7 @@ Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf
 ## English summary
 
 FreeDetect Hub is a single-file HTML dashboard linking to 42 hand-picked free plagiarism and AI-detection tools. Paste or upload text (.txt, .md, .docx, .pdf), click "Check here" to copy it to the clipboard and open the chosen tool. It includes a DOI/ISBN citation generator (Crossref, OpenLibrary) and a hallucinated-reference scanner. UI in 15 languages. Only the citation features contact the network; only the language choice is stored locally.
+
+## Audit
+
+Audit: 2026-10-10 — verificat: textul lipit nu pleacă din pagină (CSP `connect-src` doar `api.crossref.org` și `openlibrary.org`); corectat un link fără nume accesibil (bannerul „Open in new tab”) și zgomotul din consolă cauzat de `frame-ancestors` în meta CSP (directiva este ignorată în meta; protecția la framing cere antet HTTP).
