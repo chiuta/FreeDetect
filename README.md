@@ -46,7 +46,7 @@ Tastatura: Enter este folosit în câmpul generatorului de citări; nu există a
 
 ## Avertisment
 
-Instrumentele listate sunt servicii terțe; rezultatele detectoarelor de plagiat și de text generat de AI pot fi eronate (false pozitive), mai ales pentru română, și nu constituie dovadă. Catalogul include și instrumente de tip „humanizer”/parafrazare, listate ca atare, fără a recomanda eludarea regulilor de integritate academică. Mărcile aparțin proprietarilor lor.
+Instrumentele listate sunt servicii terțe; rezultatele detectoarelor de plagiat și de text generat de AI pot fi eronate (false pozitive), mai ales pentru română, și nu constituie dovadă. Catalogul include și instrumente de tip „humanizer”/parafrazare, listate ca atare, fără a recomanda eludarea regulilor de integritate academică. Mărcile aparțin proprietarilor lor (nume comerciale ale deținătorilor lor, folosite descriptiv). Instrumentele de „humanizer” sunt păstrate în catalog doar ca informare despre ce există pe piață; autorul nu le recomandă pentru a eluda regulile de integritate academică, iar utilizarea lor în lucrări supuse acestor reguli rămâne responsabilitatea utilizatorului.
 
 ## Rulare locală / offline
 
@@ -54,7 +54,7 @@ Descarcă repository-ul (fișierul `index.html` și directorul `vendor/`) și de
 
 ## Licență
 
-CC0 1.0 Universal (domeniu public), conform antetului aplicației — vezi fișierul LICENSE. Atenție: directorul `vendor/` conține biblioteci terțe cu licențele lor, care nu sunt acoperite de CC0 — `pdfjs/` (Mozilla pdf.js 3.x, Apache-2.0, conform antetului fișierului) și `mammoth.browser.min.js` (mammoth.js; licența nu este inclusă în fișier, verific-o în proiectul sursă).
+CC0 1.0 Universal (domeniu public), conform antetului aplicației — vezi fișierul LICENSE. Atenție: directorul `vendor/` conține biblioteci terțe cu licențele lor, care nu sunt acoperite de CC0 — `pdfjs/` (Mozilla pdf.js 3.x, Apache-2.0, conform antetului fișierului) și `mammoth.browser.min.js` (mammoth.js, BSD-2-Clause conform proiectului sursă; textul licenței nu este inclus în fișier). Detalii în [NOTICE.md](NOTICE.md).
 
 ## Autor
 
@@ -66,4 +66,4 @@ FreeDetect Hub is a single-file HTML dashboard linking to 42 hand-picked free pl
 
 ## Audit
 
-Audit: 2026-10-10 — verificat: textul lipit nu pleacă din pagină (CSP `connect-src` doar `api.crossref.org` și `openlibrary.org`); corectat un link fără nume accesibil (bannerul „Open in new tab”) și zgomotul din consolă cauzat de `frame-ancestors` în meta CSP (directiva este ignorată în meta; protecția la framing cere antet HTTP).
+Audit: 2026-10-10 (rundă 2, 2026-10-11: NOTICE.md adăugat pentru componentele terțe; notă despre instrumentele humanizer) — verificat: textul lipit nu pleacă din pagină (CSP `connect-src` doar `api.crossref.org` și `openlibrary.org`); corectat un link fără nume accesibil (bannerul „Open in new tab”) și zgomotul din consolă cauzat de `frame-ancestors` în meta CSP (directiva este ignorată în meta; protecția la framing cere antet HTTP).
