@@ -19,6 +19,8 @@ Aplicația nu face verificarea în sine: este un catalog și un ajutor de flux d
 - Zonă de text „Your Text" pentru lipire directă sau încărcare de fișiere `.txt`, `.md`, `.docx`, `.pdf`.
 - Grilă de instrumente cu filtre pe nivel (Tier: începători / profesioniști) și pe categorie (AI, plagiat, bibliografie, imagine etc.).
 - Buton „Check here" pe fiecare instrument: copiază textul în clipboard și arată un banner cu „Open in new tab".
+- Căutare în catalog (nume, temă, categorie; diacriticele sunt ignorate), cu numărătoare „n din 42” și mesaj clar când nu există rezultate; Escape golește căutarea.
+- „Profil local al textului (offline)”: cuvinte, propoziții, lungime medie și variația ei, varietatea vocabularului, timp de citire, DOI găsite și expresii de trei cuvinte repetate. Sunt statistici descriptive, nu un test de plagiat sau de text generat de AI (avertismentul este afișat în panou). Textele noi ale căutării și ale profilului sunt traduse în română și engleză; în celelalte limbi apar în engleză.
 - Panou „Workflow" (flux recomandat în 7 pași) și buton „Clear".
 - Generator de citări: introduci un DOI, ISBN sau URL, „Fetch" aduce metadatele de la Crossref / OpenLibrary și produce APA, MLA, Chicago sau BibTeX, cu „Copy".
 - „Scan input text": găsește DOI-urile din text și le verifică la Crossref, pentru a semnala referințe posibil inventate.
@@ -36,7 +38,7 @@ Aplicația nu face verificarea în sine: este un catalog și un ajutor de flux d
 7. Pentru referințe: deschide „Citation Generator", introdu un DOI/ISBN și apasă „Fetch", sau apasă „Scan input text" pentru a verifica DOI-urile din text.
 8. „Clear" golește zona de text.
 
-Tastatura: Enter este folosit în câmpul generatorului de citări; nu există alte scurtături documentate.
+Tastatura: Enter în câmpul generatorului de citări îl rulează; Escape în câmpul de căutare îl golește; nu există alte scurtături.
 
 ## Confidențialitate și rețea
 
@@ -77,3 +79,5 @@ Audit: 2026-10-10 (rundă 2, 2026-10-11: NOTICE.md adăugat pentru componentele 
 - Mesajul de eroare fără rețea la generatorul de citări este acum explicit, în toate cele 15 limbi (înainte: „Failed to fetch”).
 - Cele 18 atribute `onclick` din HTML au fost înlocuite cu atribute `data-*` și un ascultător delegat.
 - Datele „Ultima actualizare” din paginile legale: octombrie 2026.
+- Căutare în catalogul de 42 de instrumente (cu stare goală explicită) și panou „Profil local al textului” cu statistici descriptive offline (propoziții, variație, vocabular, DOI, expresii repetate); texte noi în română și engleză.
+- CSP: `script-src` pe hash SHA-256 în loc de `'unsafe-inline'`.
