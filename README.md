@@ -22,7 +22,7 @@ Aplicația nu face verificarea în sine: este un catalog și un ajutor de flux d
 - Căutare în catalog (nume, temă, categorie; diacriticele sunt ignorate), cu numărătoare „n din 42” și mesaj clar când nu există rezultate; Escape golește căutarea.
 - „Profil local al textului (offline)”: cuvinte, propoziții, lungime medie și variația ei, varietatea vocabularului, timp de citire, DOI găsite și expresii de trei cuvinte repetate. Sunt statistici descriptive, nu un test de plagiat sau de text generat de AI (avertismentul este afișat în panou). Textele noi ale căutării și ale profilului sunt traduse în română și engleză; în celelalte limbi apar în engleză.
 - Panou „Workflow" (flux recomandat în 7 pași) și buton „Clear".
-- Generator de citări: introduci un DOI, ISBN sau URL, „Fetch" aduce metadatele de la Crossref / OpenLibrary și produce APA, MLA, Chicago sau BibTeX, cu „Copy".
+- Generator de citări: introduci un DOI, ISBN sau URL, „Fetch" verifică local cifra de control a ISBN-ului și aduce metadatele de la Crossref / OpenLibrary și produce APA, MLA, Chicago sau BibTeX, cu „Copy".
 - „Scan input text": găsește DOI-urile din text și le verifică la Crossref, pentru a semnala referințe posibil inventate.
 - Interfață în 15 limbi (selector 🌐): engleză, română, franceză, germană, spaniolă, portugheză, italiană, olandeză, poloneză, rusă, arabă, chineză, japoneză, coreeană, turcă.
 - Pagini de confidențialitate/GDPR, cookies și impressum, link-uri Patreon și Buy Me a Coffee.
@@ -75,6 +75,8 @@ Audit: 2026-10-10 (rundă 2, 2026-10-11: NOTICE.md adăugat pentru componentele 
 ## Istoric / Changelog
 
 ### 11 octombrie 2026
+- Contorul de cuvinte de sub text și „Cuvinte” din profilul local folosesc acum aceeași regulă de numărare (înainte: 33 față de 35 pentru același text).
+- Generatorul de citări verifică local cifra de control a ISBN-ului (ISBN-10 și ISBN-13) înainte de orice cerere: un ISBN greșit primește mesaj imediat, fără rețea, în toate cele 15 limbi.
 - Selectorul de limbă a fost mutat într-un reper (`header`): 0 încălcări axe, inclusiv `region`.
 - Mesajul de eroare fără rețea la generatorul de citări este acum explicit, în toate cele 15 limbi (înainte: „Failed to fetch”).
 - Cele 18 atribute `onclick` din HTML au fost înlocuite cu atribute `data-*` și un ascultător delegat.

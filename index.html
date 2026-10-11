@@ -40,7 +40,7 @@
 <meta name="twitter:title" content="FreeDetect Hub">
 <meta name="twitter:description" content="42 free anti-plagiarism and AI-detection tools. Paste once, check everywhere.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5cff'/%3E%3Cstop offset='0.5' stop-color='%2322d3ee'/%3E%3Cstop offset='1' stop-color='%23f472b6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='12' fill='%230a0a12'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='38' font-weight='800' text-anchor='middle' fill='url(%23g)'%3EF%3C/text%3E%3C/svg%3E">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-isXkq60B7cPCNPGunwOd8/AtIZTDzkwKATsyx4oQnEg='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://api.crossref.org https://openlibrary.org; worker-src 'self' blob:; base-uri 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-MITvszCHSxIFM1vDyDWLHEUWnL/3knHmcGPu2hu1wws='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://api.crossref.org https://openlibrary.org; worker-src 'self' blob:; base-uri 'self'">
 <style>
 :root{--bg:#0a0a12;--bg2:#11111c;--card:#161624;--border:#26263a;--text:#e8e8f0;--muted:#8a8aa0;--accent1:#7c5cff;--accent2:#22d3ee;--accent3:#f472b6;--ok:#4ade80}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -357,6 +357,7 @@ function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;',
 function netMsg(e){return(e&&(e.name==='TypeError'||e.name==='AbortError'))?t('errNet'):(e&&e.message?e.message:String(e))}
 function fetchT(u,ms){const c=new AbortController();const id=setTimeout(()=>c.abort(),ms||12000);return fetch(u,{signal:c.signal}).finally(()=>clearTimeout(id))}
 // strip sentence punctuation glued to a DOI ("…nature12373." is not part of the DOI)
+function isbnOk(x){if(x.length===10){let a=0;for(let i=0;i<10;i++){const c=x[i]==='X'?10:+x[i];if(x[i]==='X'&&i<9)return false;a+=c*(10-i)}return a%11===0}if(x.length===13){let a=0;for(let i=0;i<13;i++)a+=(+x[i])*(i%2?3:1);return a%10===0}return false}
 function cleanDoi(d){return String(d).replace(/[.,;:)\]"']+$/,'')}
 
 const TOOLS=[
@@ -498,7 +499,8 @@ document.querySelectorAll('[data-i18n-aria]').forEach(e=>e.setAttribute('aria-la
 render();renderChips();updateStats();renderProf();
 }
 
-function updateStats(){const v=ta.value;const w=v.trim()?v.trim().split(/\s+/).length:0;stats.textContent=`${v.length} ${t('chars')} · ${w} ${t('words')}`;schedProf()}
+function countWords(x){return(String(x).match(/[\p{L}\p{N}][\p{L}\p{N}'’-]*/gu)||[]).length}
+function updateStats(){const v=ta.value;const w=countWords(v);stats.textContent=`${v.length} ${t('chars')} · ${w} ${t('words')}`;schedProf()}
 ta.addEventListener('input',updateStats);
 
 $('#clear').onclick=()=>{ta.value='';const fi=$('#file');if(fi)fi.value='';updateStats()};
@@ -646,6 +648,7 @@ let citeData=null;
 
 async function fetchCite(){
 let q=$('#citeIn').value.trim();if(!q){return}
+const citeIsbnValid=/^\d{9}[\dXx]$|^\d{13}$/.test(q.replace(/[-\s]/g,''))&&isbnOk(q.replace(/[-\s]/g,'').toUpperCase());
 const m=q.match(/10\.\d{4,9}\/[^\s]+/);const doi=m?cleanDoi(m[0]):null;citeData=null;
 $('#citeOut').textContent=t('fetching');
 try{
@@ -654,14 +657,15 @@ const r=await fetchT(`https://api.crossref.org/works/${encodeURIComponent(doi)}?
 if(!r.ok)throw Error(r.status===404?'DOI not found in Crossref (404)':'Crossref HTTP '+r.status);
 const j=await r.json();if(!j||!j.message)throw Error('Empty Crossref response');citeData=j.message;
 }else if(/^\d{9}[\dXx]$|^\d{13}$/.test(q.replace(/[-\s]/g,''))){
-const isbn=q.replace(/[-\s]/g,'');
+const isbn=q.replace(/[-\s]/g,'').toUpperCase();
+if(!isbnOk(isbn)){$('#citeOut').textContent=t('errPrefix')+': '+t('isbnBad');return}
 const r=await fetchT(`https://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json&jscmd=data`);
 if(!r.ok)throw Error('OpenLibrary HTTP '+r.status);
 const j=await r.json();const b=j['ISBN:'+isbn];if(!b)throw Error('Not found');
 citeData={title:b.title,author:(b.authors||[]).filter(a=>a&&a.name).map(a=>({given:a.name.split(' ').slice(0,-1).join(' '),family:a.name.split(' ').slice(-1)[0]})),issued:{'date-parts':[[parseInt((String(b.publish_date||'').match(/\d{4}/)||[''])[0])||'']]},publisher:(b.publishers||[{}])[0].name,_isbn:isbn};
 }else throw Error('Provide a DOI or ISBN');
 formatCite();
-}catch(e){$('#citeOut').textContent=t('errPrefix')+': '+netMsg(e)}}
+}catch(e){$('#citeOut').textContent=t('errPrefix')+': '+netMsg(e)+(citeIsbnValid?' ('+t('isbnOk')+')':'')}}
 
 function fmtAuthors(a,style){if(!a||!a.length)return'';
 const names=a.map(x=>{const fam=x.family||x.name||'',g=x.given||'';if(!g)return fam;return style==='bib'||style==='mla'?`${fam}, ${g}`:`${fam}, ${g.split(' ').filter(Boolean).map(w=>w[0]+'.').join(' ')}`});
@@ -730,7 +734,7 @@ const head=words.slice(0,500);const div=head.length?new Set(head).size/head.leng
 const grams=new Map();for(let i=0;i+2<words.length;i++){const g=words[i]+' '+words[i+1]+' '+words[i+2];grams.set(g,(grams.get(g)||0)+1)}
 const rep=[...grams].filter(([g,c])=>c>=3&&g.replace(/\s/g,'').length>=9).sort((a,b)=>b[1]-a[1]).slice(0,3);
 const dois=new Set((txt.match(/10\.\d{4,9}\/[^\s,;)\]"']+/g)||[]).map(cleanDoi)).size;
-return{w:words.length,s:n,avg:mean,cv:mean?sd/mean:0,div,rep,dois,min:words.length/200}}
+return{w:countWords(txt),s:n,avg:mean,cv:mean?sd/mean:0,div,rep,dois,min:words.length/200}}
 function renderProf(){
 const o=$('#profOut');if(!o)return;const v=ta.value;
 if(!v.trim()){o.innerHTML='<p>'+esc(t('profEmpty'))+'</p>';return}
@@ -772,6 +776,21 @@ if(I18N["en"])I18N["en"]["scanUnverified"]="unverified";
 if(I18N["en"])I18N["en"]["scanPending"]="pending";
 if(I18N["en"])I18N["en"]["scanHallucinated"]="possibly hallucinated";
 if(I18N["en"])I18N["en"]["errPrefix"]="Error";
+if(I18N["en"]){I18N["en"]["isbnBad"]="Not a valid ISBN: the check digit does not match. Look for a typo (checked locally, no network needed).";I18N["en"]["isbnOk"]="ISBN check digit is valid"}
+if(I18N["ro"]){I18N["ro"]["isbnBad"]="ISBN invalid: cifra de control nu se potrivește. Verifică dacă ai greșit o cifră (verificat local, fără rețea).";I18N["ro"]["isbnOk"]="cifra de control ISBN este corectă"}
+if(I18N["fr"]){I18N["fr"]["isbnBad"]="ISBN invalide : le chiffre de contrôle ne correspond pas. Cherchez une faute de frappe (vérifié localement, sans réseau).";I18N["fr"]["isbnOk"]="la clé de contrôle de l'ISBN est valide"}
+if(I18N["de"]){I18N["de"]["isbnBad"]="Ungültige ISBN: Die Prüfziffer stimmt nicht. Prüfen Sie auf einen Tippfehler (lokal geprüft, ohne Netzwerk).";I18N["de"]["isbnOk"]="ISBN-Prüfziffer ist gültig"}
+if(I18N["es"]){I18N["es"]["isbnBad"]="ISBN no válido: el dígito de control no coincide. Revisa si hay un error de tecleo (comprobado localmente, sin red).";I18N["es"]["isbnOk"]="el dígito de control del ISBN es válido"}
+if(I18N["pt"]){I18N["pt"]["isbnBad"]="ISBN inválido: o dígito de controlo não coincide. Procure um erro de digitação (verificado localmente, sem rede).";I18N["pt"]["isbnOk"]="o dígito de controlo do ISBN é válido"}
+if(I18N["it"]){I18N["it"]["isbnBad"]="ISBN non valido: la cifra di controllo non corrisponde. Cerca un errore di battitura (verificato in locale, senza rete).";I18N["it"]["isbnOk"]="la cifra di controllo dell'ISBN è valida"}
+if(I18N["nl"]){I18N["nl"]["isbnBad"]="Ongeldig ISBN: het controlecijfer klopt niet. Zoek een typefout (lokaal gecontroleerd, zonder netwerk).";I18N["nl"]["isbnOk"]="ISBN-controlecijfer is geldig"}
+if(I18N["pl"]){I18N["pl"]["isbnBad"]="Nieprawidłowy ISBN: cyfra kontrolna się nie zgadza. Sprawdź literówkę (sprawdzono lokalnie, bez sieci).";I18N["pl"]["isbnOk"]="cyfra kontrolna ISBN jest poprawna"}
+if(I18N["ru"]){I18N["ru"]["isbnBad"]="Недействительный ISBN: контрольная цифра не совпадает. Проверьте опечатку (проверено локально, без сети).";I18N["ru"]["isbnOk"]="контрольная цифра ISBN верна"}
+if(I18N["ar"]){I18N["ar"]["isbnBad"]="رقم ISBN غير صالح: رقم التحقق غير مطابق. تحقق من وجود خطأ في الكتابة (فُحص محليًا دون شبكة).";I18N["ar"]["isbnOk"]="رقم التحقق في ISBN صحيح"}
+if(I18N["zh"]){I18N["zh"]["isbnBad"]="ISBN 无效：校验位不匹配。请检查是否输入有误（本地校验，无需网络）。";I18N["zh"]["isbnOk"]="ISBN 校验位有效"}
+if(I18N["ja"]){I18N["ja"]["isbnBad"]="無効な ISBN です：チェックディジットが一致しません。入力ミスを確認してください（ローカルで検証、ネットワーク不要）。";I18N["ja"]["isbnOk"]="ISBN のチェックディジットは正しいです"}
+if(I18N["ko"]){I18N["ko"]["isbnBad"]="유효하지 않은 ISBN: 체크 숫자가 일치하지 않습니다. 오타를 확인하세요(로컬에서 확인, 네트워크 불필요).";I18N["ko"]["isbnOk"]="ISBN 체크 숫자가 유효합니다"}
+if(I18N["tr"]){I18N["tr"]["isbnBad"]="Geçersiz ISBN: kontrol basamağı uyuşmuyor. Yazım hatası olup olmadığına bakın (yerel olarak denetlendi, ağ gerekmez).";I18N["tr"]["isbnOk"]="ISBN kontrol basamağı geçerli"}
 if(I18N["en"])I18N["en"]["errNet"]="No connection, or the service did not respond. Citation lookup needs internet; everything else works offline.";
 if(I18N["ro"])I18N["ro"]["errNet"]="Fără conexiune sau serviciul nu a răspuns. Căutarea citărilor are nevoie de internet; restul aplicației funcționează offline.";
 if(I18N["fr"])I18N["fr"]["errNet"]="Pas de connexion, ou le service n'a pas répondu. La recherche de citations nécessite Internet ; le reste fonctionne hors ligne.";
