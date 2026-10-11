@@ -1,5 +1,7 @@
 # FreeDetect Hub
 
+**Ultima actualizare:** 11 octombrie 2026
+
 Un panou unic pentru 42 de instrumente gratuite de detectare a plagiatului și a textului generat de AI, plus generator de citări.
 
 **Live:** https://chiuta.github.io/FreeDetect/
@@ -67,3 +69,11 @@ FreeDetect Hub is a single-file HTML dashboard linking to 42 hand-picked free pl
 ## Audit
 
 Audit: 2026-10-10 (rundă 2, 2026-10-11: NOTICE.md adăugat pentru componentele terțe; notă despre instrumentele humanizer) — verificat: textul lipit nu pleacă din pagină (CSP `connect-src` doar `api.crossref.org` și `openlibrary.org`); corectat un link fără nume accesibil (bannerul „Open in new tab”) și zgomotul din consolă cauzat de `frame-ancestors` în meta CSP (directiva este ignorată în meta; protecția la framing cere antet HTTP).
+
+## Istoric / Changelog
+
+### 11 octombrie 2026
+- Selectorul de limbă a fost mutat într-un reper (`header`): 0 încălcări axe, inclusiv `region`.
+- Mesajul de eroare fără rețea la generatorul de citări este acum explicit, în toate cele 15 limbi (înainte: „Failed to fetch”).
+- Cele 18 atribute `onclick` din HTML au fost înlocuite cu atribute `data-*` și un ascultător delegat.
+- Datele „Ultima actualizare” din paginile legale: octombrie 2026.
