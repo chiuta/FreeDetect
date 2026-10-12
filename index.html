@@ -25,6 +25,8 @@
 }
 </style>
 <meta charset="UTF-8">
+<meta name="application-version" content="1.0.0">
+<meta name="last-updated" content="2026-10-12">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>FreeDetect Hub — Free Anti-Plagiarism & AI Detection Tools</title>
 <meta name="description" content="A curated directory of free plagiarism and AI-detection tools. Paste your text once, check it everywhere.">
@@ -40,7 +42,7 @@
 <meta name="twitter:title" content="FreeDetect Hub">
 <meta name="twitter:description" content="42 free anti-plagiarism and AI-detection tools. Paste once, check everywhere.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5cff'/%3E%3Cstop offset='0.5' stop-color='%2322d3ee'/%3E%3Cstop offset='1' stop-color='%23f472b6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='12' fill='%230a0a12'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='38' font-weight='800' text-anchor='middle' fill='url(%23g)'%3EF%3C/text%3E%3C/svg%3E">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-MITvszCHSxIFM1vDyDWLHEUWnL/3knHmcGPu2hu1wws='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://api.crossref.org https://openlibrary.org; worker-src 'self' blob:; base-uri 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-0T8g1v2UsBHQQH4cXqcZwemxwbSBBftuVil/AsmYOTs='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://api.crossref.org https://openlibrary.org; worker-src 'self' blob:; base-uri 'self'">
 <style>
 :root{--bg:#0a0a12;--bg2:#11111c;--card:#161624;--border:#26263a;--text:#e8e8f0;--muted:#8a8aa0;--accent1:#7c5cff;--accent2:#22d3ee;--accent3:#f472b6;--ok:#4ade80}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -306,6 +308,7 @@ details summary::marker{display:none}
 <button class="legal-btn" data-legal-open="legalA11y">♿ <span data-i18n="lgA11y">Accessibility</span></button>
 <button class="legal-btn" data-legal-open="legalTech">⚙ <span data-i18n="lgTech">Technologies & transparency</span></button>
 </div>
+<p id="app-version" style="margin-top:14px;font-size:12px"><span data-i18n="verLbl">Version</span>: v 1.0.0 · 2026-10-12</p>
 </footer>
 </div>
 
@@ -1199,6 +1202,9 @@ if(I18N["tr"])I18N["tr"]["scanPending"]="beklemede";
 if(I18N["tr"])I18N["tr"]["scanHallucinated"]="muhtemelen halüsinasyon";
 if(I18N["tr"])I18N["tr"]["errPrefix"]="Hata";
 if(I18N["tr"])I18N["tr"]["ariaText"]="Kontrol edilecek metin";
+// Etichetă versiune (traducere)
+const VERLBL={"en": "Version", "ro": "Versiune", "fr": "Version", "de": "Version", "es": "Versión", "pt": "Versão", "it": "Versione", "nl": "Versie", "pl": "Wersja", "ru": "Версия", "ar": "الإصدار", "zh": "版本", "ja": "バージョン", "ko": "버전", "tr": "Sürüm"};
+for(const k in VERLBL)if(I18N[k])I18N[k]["verLbl"]=VERLBL[k];
 // Defer initial i18n application until the full DOM is parsed.
 // Critical: the legal modals come AFTER this inline <script> block in the document,
 // so at this point they're not yet in the DOM. Running applyI18n synchronously would

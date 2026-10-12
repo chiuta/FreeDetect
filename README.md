@@ -1,6 +1,6 @@
 # FreeDetect Hub
 
-**Ultima actualizare:** 11 octombrie 2026
+**Versiune:** 1.0.0 · **Ultima actualizare:** 12 octombrie 2026
 
 Un panou unic pentru 42 de instrumente gratuite de detectare a plagiatului și a textului generat de AI, plus generator de citări.
 
@@ -73,6 +73,9 @@ FreeDetect Hub is a single-file HTML dashboard linking to 42 hand-picked free pl
 Audit: 2026-10-10 (rundă 2, 2026-10-11: NOTICE.md adăugat pentru componentele terțe; notă despre instrumentele humanizer) — verificat: textul lipit nu pleacă din pagină (CSP `connect-src` doar `api.crossref.org` și `openlibrary.org`); corectat un link fără nume accesibil (bannerul „Open in new tab”) și zgomotul din consolă cauzat de `frame-ancestors` în meta CSP (directiva este ignorată în meta; protecția la framing cere antet HTTP).
 
 ## Istoric / Changelog
+
+### 12 octombrie 2026 (v1.0.0)
+- 1.0.0 — 2026-10-12: versiunea și data ultimei actualizări sunt afișate în aplicație
 
 ### 11 octombrie 2026
 - Contorul de cuvinte de sub text și „Cuvinte” din profilul local folosesc acum aceeași regulă de numărare (înainte: 33 față de 35 pentru același text).
