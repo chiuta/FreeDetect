@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "slug": "freedetect",
+  "name": "FreeDetect Hub — Free Anti-Plagiarism & AI Detection Tools",
+  "version": "1.1.0",
+  "updated": "2026-10-14",
+  "description": "A curated directory of free plagiarism and AI-detection tools. Paste your text once, check it everywhere.",
+  "egress": [
+    {
+      "host": "api.crossref.org",
+      "via": [
+        "csp:connect-src"
+      ]
+    },
+    {
+      "host": "openlibrary.org",
+      "via": [
+        "csp:connect-src"
+      ]
+    }
+  ],
+  "permissions": [
+    "clipboard",
+    "serviceWorker",
+    "localStorage"
+  ],
+  "storageKeys": [
+    "fdh_lang"
+  ],
+  "sizeBytes": 440508,
+  "sha256": "5f7bd2dae8cd09371dde1580548f706d4fc6359961d1ee7b4f59f21fdf505638",
+  "csp": {
+    "present": true,
+    "directives": {
+      "default-src": "'self'",
+      "script-src": "'self' sha256×3",
+      "style-src": "'self' 'unsafe-inline'",
+      "img-src": "'self' data: blob:",
+      "connect-src": "'self' https://api.crossref.org https://openlibrary.org",
+      "worker-src": "'self' blob:",
+      "base-uri": "'self'",
+      "manifest-src": "'self'"
+    },
+    "scriptInline": "hash",
+    "connect": "'self' https://api.crossref.org https://openlibrary.org"
+  },
+  "features": {
+    "export": true,
+    "import": true,
+    "i18n": [
+      "ro",
+      "en",
+      "fr",
+      "it",
+      "es",
+      "pt",
+      "de"
+    ],
+    "pwa": {
+      "manifest": true,
+      "serviceWorker": true
+    },
+    "modules": [
+      "core",
+      "label",
+      "bundle",
+      "pii",
+      "search"
+    ]
+  },
+  "kit": {
+    "version": "1.0.0",
+    "modules": [
+      "core",
+      "label",
+      "bundle",
+      "pii",
+      "search"
+    ]
+  },
+  "selfSerializing": false
+}

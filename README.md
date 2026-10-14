@@ -1,6 +1,6 @@
 # FreeDetect Hub
 
-**Versiune:** 1.0.0 · **Ultima actualizare:** 12 octombrie 2026
+**Versiune:** 1.1.0 · **Ultima actualizare:** 14 octombrie 2026
 
 Un panou unic pentru 42 de instrumente gratuite de detectare a plagiatului și a textului generat de AI, plus generator de citări.
 
@@ -26,6 +26,14 @@ Aplicația nu face verificarea în sine: este un catalog și un ajutor de flux d
 - „Scan input text": găsește DOI-urile din text și le verifică la Crossref, pentru a semnala referințe posibil inventate.
 - Interfață în 15 limbi (selector 🌐): engleză, română, franceză, germană, spaniolă, portugheză, italiană, olandeză, poloneză, rusă, arabă, chineză, japoneză, coreeană, turcă.
 - Pagini de confidențialitate/GDPR, cookies și impressum, link-uri Patreon și Buy Me a Coffee.
+
+## Funcții noi (1.1.0)
+
+- **Verificare de date personale înainte de „Check here”**: textul este scanat local; dacă apar e-mailuri, telefoane, IBAN, CNP etc., poți mascarea, continua sau anula. Se maschează doar textul copiat în clipboard; zona de text rămâne neschimbată.
+- **Căutare în catalog după relevanță**, cu sinonime (plagiat/plagiarism, AI/GPT, citare etc.) și toleranță la greșeli; apare „· după relevanță” lângă numărătoare. Potrivirea literală veche rămâne.
+- **„Export profile (.md)”**: salvează profilul local al textului ca fișier Markdown (statistici, nu textul).
+- Modulele comune „fff-kit” sunt incluse; copia `.fff.json` din dialogul versiunii cuprinde doar limba interfeței.
+- Textele noi sunt în toate cele 15 limbi ale interfeței; **traducerile nu au fost verificate de vorbitori nativi.**
 
 ## Manual de utilizare
 
@@ -73,6 +81,11 @@ FreeDetect Hub is a single-file HTML dashboard linking to 42 hand-picked free pl
 Audit: 2026-10-10 (rundă 2, 2026-10-11: NOTICE.md adăugat pentru componentele terțe; notă despre instrumentele humanizer) — verificat: textul lipit nu pleacă din pagină (CSP `connect-src` doar `api.crossref.org` și `openlibrary.org`); corectat un link fără nume accesibil (bannerul „Open in new tab”) și zgomotul din consolă cauzat de `frame-ancestors` în meta CSP (directiva este ignorată în meta; protecția la framing cere antet HTTP).
 
 ## Istoric / Changelog
+
+### 14 octombrie 2026 (v1.1.0)
+- Protecție de date personale înainte de copierea în clipboard (FFF.pii).
+- Căutare în catalog după relevanță, cu sinonime (FFF.search).
+- Export profil (.md). Module comune core, label, bundle, search, pii; teste: `tests/fff-r8.test.mjs`.
 
 ### 12 octombrie 2026 (v1.0.0)
 - 1.0.0 — 2026-10-12: versiunea și data ultimei actualizări sunt afișate în aplicație
