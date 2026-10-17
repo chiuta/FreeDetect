@@ -66,7 +66,7 @@ Descarcă repository-ul (fișierul `index.html` și directorul `vendor/`) și de
 
 ## Licență
 
-CC0 1.0 Universal (domeniu public), conform antetului aplicației — vezi fișierul LICENSE. Atenție: directorul `vendor/` conține biblioteci terțe cu licențele lor, care nu sunt acoperite de CC0 — `pdfjs/` (Mozilla pdf.js 3.x, Apache-2.0, conform antetului fișierului) și `mammoth.browser.min.js` (mammoth.js, BSD-2-Clause conform proiectului sursă; textul licenței nu este inclus în fișier). Detalii în [NOTICE.md](NOTICE.md).
+MIT, conform antetului aplicației — vezi fișierul LICENSE. Atenție: directorul `vendor/` conține biblioteci terțe cu licențele lor, care nu sunt acoperite de licența MIT — `pdfjs/` (Mozilla pdf.js 3.x, Apache-2.0, conform antetului fișierului) și `mammoth.browser.min.js` (mammoth.js, BSD-2-Clause conform proiectului sursă; textul licenței nu este inclus în fișier). Detalii în [NOTICE.md](NOTICE.md).
 
 ## Autor
 

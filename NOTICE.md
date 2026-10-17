@@ -1,6 +1,6 @@
 # Componente terțe
 
-Aplicația proprie (index.html) este CC0 1.0 (vezi LICENSE). Directorul `vendor/` conține biblioteci terțe, care NU sunt acoperite de CC0 și își păstrează licențele:
+Aplicația proprie (index.html) este sub licență MIT (vezi LICENSE). Directorul `vendor/` conține biblioteci terțe, care NU sunt acoperite de licența MIT și își păstrează licențele:
 
 | Fișier | Proiect | Licență | Stare |
 |---|---|---|---|
