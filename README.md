@@ -25,7 +25,7 @@ Aplicația nu face verificarea în sine: este un catalog și un ajutor de flux d
 - Generator de citări: introduci un DOI, ISBN sau URL, „Fetch" verifică local cifra de control a ISBN-ului și aduce metadatele de la Crossref / OpenLibrary și produce APA, MLA, Chicago sau BibTeX, cu „Copy".
 - „Scan input text": găsește DOI-urile din text și le verifică la Crossref, pentru a semnala referințe posibil inventate.
 - Interfață în 15 limbi (selector 🌐): engleză, română, franceză, germană, spaniolă, portugheză, italiană, olandeză, poloneză, rusă, arabă, chineză, japoneză, coreeană, turcă.
-- Pagini de confidențialitate/GDPR, cookies și impressum, link-uri Patreon și Buy Me a Coffee.
+- Pagini de confidențialitate/GDPR, cookies și impressum, link-uri Buy Me a Coffee.
 
 ## Funcții noi (1.1.0)
 
@@ -54,7 +54,7 @@ Tastatura: Enter în câmpul generatorului de citări îl rulează; Escape în c
 - Textul lipit nu este trimis nicăieri de aplicație. Singurele cereri de rețea ale paginii sunt cele ale generatorului de citări, la acționarea lui: `api.crossref.org` (DOI și scanare) și `openlibrary.org` (ISBN).
 - Cererile către Crossref conțin DOI-ul interogat, adresa ta IP și parametrul `mailto=alexio@trom.tf` (adresa de contact a autorului, folosită pentru „polite pool”); cele către OpenLibrary conțin ISBN-ul și IP-ul. „Scan input text” trimite către Crossref doar DOI-urile găsite în text, nu textul întreg.
 - Când folosești „Check here", textul ajunge, prin lipirea ta, la serviciul terț ales și intră sub politica acestuia.
-- Pagina conține link-uri (nu cereri automate) către zeci de servicii terțe, către Patreon, Buy Me a Coffee și site-urile autorului.
+- Pagina conține link-uri (nu cereri automate) către zeci de servicii terțe, către Buy Me a Coffee și site-urile autorului.
 
 ## Avertisment
 
