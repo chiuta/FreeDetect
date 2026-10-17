@@ -27,8 +27,8 @@
   "storageKeys": [
     "fdh_lang"
   ],
-  "sizeBytes": 440626,
-  "sha256": "e25c6ca440baa7d2effa72525c52290dd8efe88b2a74622c8dfbb80ed8700f28",
+  "sizeBytes": 440537,
+  "sha256": "db51b3c0d34934ed6beea9af0ef0b30706ab1af1234adcd555b54807a063aa3e",
   "csp": {
     "present": true,
     "directives": {
