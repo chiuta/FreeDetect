@@ -74,9 +74,9 @@ MIT, selon l'en-tête de l'application — voir le fichier LICENSE. Attention : 
 
 Alexio — Alexandru-Ionuț Chiuță, contact : alexio@trom.tf
 
-## English summary
+## Résumé
 
-FreeDetect Hub is a single-file HTML dashboard linking to 42 hand-picked free plagiarism and AI-detection tools. Paste or upload text (.txt, .md, .docx, .pdf), click "Check here" to copy it to the clipboard and open the chosen tool. It includes a DOI/ISBN citation generator (Crossref, OpenLibrary) and a hallucinated-reference scanner. UI in 15 languages. Only the citation features contact the network; only the language choice is stored locally.
+FreeDetect Hub est un tableau de bord HTML en un seul fichier qui renvoie vers 42 outils gratuits de détection de plagiat et d'IA, choisis un à un. Collez ou téléversez un texte (.txt, .md, .docx, .pdf), cliquez sur « Check here » pour le copier dans le presse-papiers et ouvrir l'outil choisi. Il comprend un générateur de citations DOI/ISBN (Crossref, OpenLibrary) et un détecteur de références hallucinées. Interface en 15 langues. Seules les fonctions de citation contactent le réseau ; seul le choix de la langue est stocké localement.
 
 ## Audit
 
