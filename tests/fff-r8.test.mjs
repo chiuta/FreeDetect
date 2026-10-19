@@ -34,7 +34,7 @@ const TEXT_OK = 'The quick brown fox jumps over the lazy dog. A perfectly ordina
 
 {
   const {ctx, page, errs, net} = await open();
-  check('versiune 1.2.0 în meta și #app-version', await page.evaluate(() => document.querySelector('meta[name=application-version]').content === '1.2.0' && /v 1\.2\.0 · 2026-10-19/.test(document.getElementById('app-version').textContent)));
+  check('versiune 1.3.0 în meta și #app-version', await page.evaluate(() => document.querySelector('meta[name=application-version]').content === '1.3.0' && /v 1\.3\.0 · 2026-10-19/.test(document.getElementById('app-version').textContent)));
   check('kitul e prezent (pii, search)', await page.evaluate(() => !!(window.FFF && FFF.pii && FFF.search)));
 
   // --- protecție date personale ---
