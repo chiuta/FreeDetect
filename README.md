@@ -1,74 +1,76 @@
 # FreeDetect Hub
 
-**Versiune:** 1.1.0 · **Ultima actualizare:** 14 octombrie 2026
+**English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-Un panou unic pentru 42 de instrumente gratuite de detectare a plagiatului și a textului generat de AI, plus generator de citări.
+**Version:** 1.1.0 · **Last updated:** 2026-10-14
 
-**Live:** https://chiuta.github.io/FreeDetect/
+A single panel for 42 free plagiarism and AI-generated text detection tools, plus a citation generator.
 
-![Captura de ecran](screenshot.png)
+**Live app:** https://chiuta.github.io/FreeDetect/
 
-## Ce este
+![Screenshot](screenshot.png)
 
-FreeDetect Hub („Paste once. Check everywhere.") este o aplicație HTML într-un singur fișier (cu bibliotecile PDF și DOCX incluse în directorul `vendor/`). Lipești sau încarci un text o singură dată, apoi alegi dintr-o grilă de 42 de instrumente externe selectate manual; textul este copiat în clipboard și instrumentul ales se deschide într-o filă nouă, unde îl lipești.
+## What it is
 
-Aplicația nu face verificarea în sine: este un catalog și un ajutor de flux de lucru. Rezultatele detectoarelor pot fi eronate (false pozitive), mai ales pentru texte non-englezești, inclusiv română; aplicația avertizează explicit despre acest lucru.
+FreeDetect Hub ("Paste once. Check everywhere.") is a single-file HTML application (with the PDF and DOCX libraries included in the `vendor/` directory). You paste or upload a text once, then choose from a grid of 42 hand-picked external tools; the text is copied to the clipboard and the chosen tool opens in a new tab, where you paste it.
 
-## Funcții
+The app does not do the checking itself: it is a catalog and a workflow aid. The results of detectors can be wrong (false positives), especially for non-English texts, including Romanian; the app warns about this explicitly.
 
-- Zonă de text „Your Text" pentru lipire directă sau încărcare de fișiere `.txt`, `.md`, `.docx`, `.pdf`.
-- Grilă de instrumente cu filtre pe nivel (Tier: începători / profesioniști) și pe categorie (AI, plagiat, bibliografie, imagine etc.).
-- Buton „Check here" pe fiecare instrument: copiază textul în clipboard și arată un banner cu „Open in new tab".
-- Căutare în catalog (nume, temă, categorie; diacriticele sunt ignorate), cu numărătoare „n din 42” și mesaj clar când nu există rezultate; Escape golește căutarea.
-- „Profil local al textului (offline)”: cuvinte, propoziții, lungime medie și variația ei, varietatea vocabularului, timp de citire, DOI găsite și expresii de trei cuvinte repetate. Sunt statistici descriptive, nu un test de plagiat sau de text generat de AI (avertismentul este afișat în panou). Textele noi ale căutării și ale profilului sunt traduse în română și engleză; în celelalte limbi apar în engleză.
-- Panou „Workflow" (flux recomandat în 7 pași) și buton „Clear".
-- Generator de citări: introduci un DOI, ISBN sau URL, „Fetch" verifică local cifra de control a ISBN-ului și aduce metadatele de la Crossref / OpenLibrary și produce APA, MLA, Chicago sau BibTeX, cu „Copy".
-- „Scan input text": găsește DOI-urile din text și le verifică la Crossref, pentru a semnala referințe posibil inventate.
-- Interfață în 15 limbi (selector 🌐): engleză, română, franceză, germană, spaniolă, portugheză, italiană, olandeză, poloneză, rusă, arabă, chineză, japoneză, coreeană, turcă.
-- Pagini de confidențialitate/GDPR, cookies și impressum, link-uri Buy Me a Coffee.
+## Features
 
-## Funcții noi (1.1.0)
+- "Your Text" text area for direct pasting or uploading `.txt`, `.md`, `.docx`, `.pdf` files.
+- Tool grid with filters by tier (Tier: beginners / professionals) and by category (AI, plagiarism, bibliography, image etc.).
+- "Check here" button on every tool: it copies the text to the clipboard and shows a banner with "Open in new tab".
+- Catalog search (name, topic, category; diacritics are ignored), with an "n of 42" counter and a clear message when there are no results; Escape clears the search.
+- "Local text profile (offline)": words, sentences, average length and its variation, vocabulary variety, reading time, DOIs found and repeated three-word phrases. These are descriptive statistics, not a plagiarism or AI-generated text test (the warning is displayed in the panel). The new texts for the search and the profile are translated into Romanian and English; in the other languages they appear in English.
+- "Workflow" panel (a recommended 7-step flow) and a "Clear" button.
+- Citation generator: you enter a DOI, ISBN or URL, "Fetch" locally checks the ISBN check digit and retrieves the metadata from Crossref / OpenLibrary and produces APA, MLA, Chicago or BibTeX, with "Copy".
+- "Scan input text": finds the DOIs in the text and checks them with Crossref, to flag possibly invented references.
+- Interface in 15 languages (🌐 selector): English, Romanian, French, German, Spanish, Portuguese, Italian, Dutch, Polish, Russian, Arabic, Chinese, Japanese, Korean, Turkish.
+- Privacy/GDPR, cookies and imprint pages, Buy Me a Coffee links.
 
-- **Verificare de date personale înainte de „Check here”**: textul este scanat local; dacă apar e-mailuri, telefoane, IBAN, CNP etc., poți mascarea, continua sau anula. Se maschează doar textul copiat în clipboard; zona de text rămâne neschimbată.
-- **Căutare în catalog după relevanță**, cu sinonime (plagiat/plagiarism, AI/GPT, citare etc.) și toleranță la greșeli; apare „· după relevanță” lângă numărătoare. Potrivirea literală veche rămâne.
-- **„Export profile (.md)”**: salvează profilul local al textului ca fișier Markdown (statistici, nu textul).
-- Modulele comune „fff-kit” sunt incluse; copia `.fff.json` din dialogul versiunii cuprinde doar limba interfeței.
-- Textele noi sunt în toate cele 15 limbi ale interfeței; **traducerile nu au fost verificate de vorbitori nativi.**
+## New features (1.1.0)
 
-## Manual de utilizare
+- **Personal data check before "Check here"**: the text is scanned locally; if emails, phone numbers, IBANs, CNPs (Romanian personal ID numbers) etc. appear, you can mask, continue or cancel. Only the text copied to the clipboard is masked; the text area remains unchanged.
+- **Catalog search by relevance**, with synonyms (plagiat/plagiarism, AI/GPT, citare etc.) and tolerance for typos; "· după relevanță" (by relevance) appears next to the counter. The old literal matching remains.
+- **"Export profile (.md)"**: saves the local text profile as a Markdown file (statistics, not the text).
+- The shared "fff-kit" modules are included; the `.fff.json` copy from the version dialog contains only the interface language.
+- The new texts are in all 15 interface languages; **the translations have not been checked by native speakers.**
 
-1. Deschide pagina și, dacă vrei, schimbă limba din selectorul 🌐 (opțiunea este reținută).
-2. Lipește textul în „Your Text" sau încarcă un fișier `.txt`, `.md`, `.docx` ori `.pdf`.
-3. Folosește filtrele Tier și Category pentru a restrânge grila de instrumente.
-4. Apasă „Check here" pe 2-3 detectoare; textul este copiat automat în clipboard.
-5. În bannerul care apare apasă „Open in new tab", apoi lipește textul (Ctrl+V / Cmd+V) în instrumentul deschis.
-6. Compară rezultatele: un singur semnal nu este o dovadă.
-7. Pentru referințe: deschide „Citation Generator", introdu un DOI/ISBN și apasă „Fetch", sau apasă „Scan input text" pentru a verifica DOI-urile din text.
-8. „Clear" golește zona de text.
+## User guide
 
-Tastatura: Enter în câmpul generatorului de citări îl rulează; Escape în câmpul de căutare îl golește; nu există alte scurtături.
+1. Open the page and, if you wish, change the language from the 🌐 selector (the choice is remembered).
+2. Paste the text into "Your Text" or upload a `.txt`, `.md`, `.docx` or `.pdf` file.
+3. Use the Tier and Category filters to narrow the tool grid.
+4. Press "Check here" on 2–3 detectors; the text is copied automatically to the clipboard.
+5. In the banner that appears, press "Open in new tab", then paste the text (Ctrl+V / Cmd+V) into the opened tool.
+6. Compare the results: a single signal is not proof.
+7. For references: open "Citation Generator", enter a DOI/ISBN and press "Fetch", or press "Scan input text" to check the DOIs in the text.
+8. "Clear" empties the text area.
 
-## Confidențialitate și rețea
+Keyboard: Enter in the citation generator field runs it; Escape in the search field clears it; there are no other shortcuts.
 
-- Local: în `localStorage` se reține doar limba interfeței (`fdh_lang`). Textul tău nu este salvat.
-- Textul lipit nu este trimis nicăieri de aplicație. Singurele cereri de rețea ale paginii sunt cele ale generatorului de citări, la acționarea lui: `api.crossref.org` (DOI și scanare) și `openlibrary.org` (ISBN).
-- Cererile către Crossref conțin DOI-ul interogat, adresa ta IP și parametrul `mailto=alexio@trom.tf` (adresa de contact a autorului, folosită pentru „polite pool”); cele către OpenLibrary conțin ISBN-ul și IP-ul. „Scan input text” trimite către Crossref doar DOI-urile găsite în text, nu textul întreg.
-- Când folosești „Check here", textul ajunge, prin lipirea ta, la serviciul terț ales și intră sub politica acestuia.
-- Pagina conține link-uri (nu cereri automate) către zeci de servicii terțe, către Buy Me a Coffee și site-urile autorului.
+## Privacy and network
 
-## Avertisment
+- Local: only the interface language (`fdh_lang`) is kept in `localStorage`. Your text is not saved.
+- The pasted text is not sent anywhere by the app. The only network requests of the page are those of the citation generator, when it is used: `api.crossref.org` (DOI and scan) and `openlibrary.org` (ISBN).
+- Requests to Crossref contain the queried DOI, your IP address and the parameter `mailto=alexio@trom.tf` (the author's contact address, used for the "polite pool"); those to OpenLibrary contain the ISBN and the IP. "Scan input text" sends to Crossref only the DOIs found in the text, not the whole text.
+- When you use "Check here", the text reaches the chosen third-party service through your pasting and falls under its policy.
+- The page contains links (not automatic requests) to dozens of third-party services, to Buy Me a Coffee and to the author's sites.
 
-Instrumentele listate sunt servicii terțe; rezultatele detectoarelor de plagiat și de text generat de AI pot fi eronate (false pozitive), mai ales pentru română, și nu constituie dovadă. Catalogul include și instrumente de tip „humanizer”/parafrazare, listate ca atare, fără a recomanda eludarea regulilor de integritate academică. Mărcile aparțin proprietarilor lor (nume comerciale ale deținătorilor lor, folosite descriptiv). Instrumentele de „humanizer” sunt păstrate în catalog doar ca informare despre ce există pe piață; autorul nu le recomandă pentru a eluda regulile de integritate academică, iar utilizarea lor în lucrări supuse acestor reguli rămâne responsabilitatea utilizatorului.
+## Disclaimer
 
-## Rulare locală / offline
+The tools listed are third-party services; the results of plagiarism and AI-generated text detectors can be wrong (false positives), especially for Romanian, and do not constitute proof. The catalog also includes "humanizer"/paraphrasing tools, listed as such, without recommending circumventing academic integrity rules. Trademarks belong to their owners (trade names of their holders, used descriptively). The "humanizer" tools are kept in the catalog only as information about what exists on the market; the author does not recommend them for circumventing academic integrity rules, and their use in work subject to those rules remains the user's responsibility.
 
-Descarcă repository-ul (fișierul `index.html` și directorul `vendor/`) și deschide `index.html` în browser. Interfața, filtrarea și citirea fișierelor locale funcționează fără internet. Au nevoie de internet: generatorul de citări (Crossref, OpenLibrary) și, desigur, instrumentele externe pe care le deschizi.
+## Running locally / offline
 
-## Licență
+Download the repository (the `index.html` file and the `vendor/` directory) and open `index.html` in a browser. The interface, filtering and reading of local files work without internet. Internet is needed for: the citation generator (Crossref, OpenLibrary) and, of course, the external tools you open.
 
-MIT, conform antetului aplicației — vezi fișierul LICENSE. Atenție: directorul `vendor/` conține biblioteci terțe cu licențele lor, care nu sunt acoperite de licența MIT — `pdfjs/` (Mozilla pdf.js 3.x, Apache-2.0, conform antetului fișierului) și `mammoth.browser.min.js` (mammoth.js, BSD-2-Clause conform proiectului sursă; textul licenței nu este inclus în fișier). Detalii în [NOTICE.md](NOTICE.md).
+## License
 
-## Autor
+MIT, according to the app header — see the LICENSE file. Note: the `vendor/` directory contains third-party libraries with their own licenses, which are not covered by the MIT license — `pdfjs/` (Mozilla pdf.js 3.x, Apache-2.0, according to the file header) and `mammoth.browser.min.js` (mammoth.js, BSD-2-Clause according to the source project; the license text is not included in the file). Details in [NOTICE.md](NOTICE.md).
+
+## Author
 
 Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf
 
@@ -78,24 +80,24 @@ FreeDetect Hub is a single-file HTML dashboard linking to 42 hand-picked free pl
 
 ## Audit
 
-Audit: 2026-10-10 (rundă 2, 2026-10-11: NOTICE.md adăugat pentru componentele terțe; notă despre instrumentele humanizer) — verificat: textul lipit nu pleacă din pagină (CSP `connect-src` doar `api.crossref.org` și `openlibrary.org`); corectat un link fără nume accesibil (bannerul „Open in new tab”) și zgomotul din consolă cauzat de `frame-ancestors` în meta CSP (directiva este ignorată în meta; protecția la framing cere antet HTTP).
+Audit: 2026-10-10 (round 2, 2026-10-11: NOTICE.md added for the third-party components; note about humanizer tools) — verified: the pasted text does not leave the page (CSP `connect-src` only `api.crossref.org` and `openlibrary.org`); fixed a link without an accessible name (the "Open in new tab" banner) and the console noise caused by `frame-ancestors` in the CSP meta tag (the directive is ignored in meta; framing protection requires an HTTP header).
 
-## Istoric / Changelog
+## History / Changelog
 
-### 14 octombrie 2026 (v1.1.0)
-- Protecție de date personale înainte de copierea în clipboard (FFF.pii).
-- Căutare în catalog după relevanță, cu sinonime (FFF.search).
-- Export profil (.md). Module comune core, label, bundle, search, pii; teste: `tests/fff-r8.test.mjs`.
+### 14 October 2026 (v1.1.0)
+- Personal data protection before copying to the clipboard (FFF.pii).
+- Catalog search by relevance, with synonyms (FFF.search).
+- Profile export (.md). Shared modules core, label, bundle, search, pii; tests: `tests/fff-r8.test.mjs`.
 
-### 12 octombrie 2026 (v1.0.0)
-- 1.0.0 — 2026-10-12: versiunea și data ultimei actualizări sunt afișate în aplicație
+### 12 October 2026 (v1.0.0)
+- 1.0.0 — 2026-10-12: the version and the date of the last update are shown in the app
 
-### 11 octombrie 2026
-- Contorul de cuvinte de sub text și „Cuvinte” din profilul local folosesc acum aceeași regulă de numărare (înainte: 33 față de 35 pentru același text).
-- Generatorul de citări verifică local cifra de control a ISBN-ului (ISBN-10 și ISBN-13) înainte de orice cerere: un ISBN greșit primește mesaj imediat, fără rețea, în toate cele 15 limbi.
-- Selectorul de limbă a fost mutat într-un reper (`header`): 0 încălcări axe, inclusiv `region`.
-- Mesajul de eroare fără rețea la generatorul de citări este acum explicit, în toate cele 15 limbi (înainte: „Failed to fetch”).
-- Cele 18 atribute `onclick` din HTML au fost înlocuite cu atribute `data-*` și un ascultător delegat.
-- Datele „Ultima actualizare” din paginile legale: octombrie 2026.
-- Căutare în catalogul de 42 de instrumente (cu stare goală explicită) și panou „Profil local al textului” cu statistici descriptive offline (propoziții, variație, vocabular, DOI, expresii repetate); texte noi în română și engleză.
-- CSP: `script-src` pe hash SHA-256 în loc de `'unsafe-inline'`.
+### 11 October 2026
+- The word counter under the text and "Cuvinte" (Words) in the local profile now use the same counting rule (before: 33 versus 35 for the same text).
+- The citation generator locally checks the ISBN check digit (ISBN-10 and ISBN-13) before any request: a wrong ISBN gets an immediate message, without network, in all 15 languages.
+- The language selector was moved into a landmark (`header`): 0 axe violations, including `region`.
+- The no-network error message in the citation generator is now explicit, in all 15 languages (before: "Failed to fetch").
+- The 18 `onclick` attributes in the HTML were replaced with `data-*` attributes and a delegated listener.
+- The "Last updated" dates in the legal pages: October 2026.
+- Search in the catalog of 42 tools (with an explicit empty state) and a "Local text profile" panel with offline descriptive statistics (sentences, variation, vocabulary, DOIs, repeated phrases); new texts in Romanian and English.
+- CSP: `script-src` by SHA-256 hash instead of `'unsafe-inline'`.
