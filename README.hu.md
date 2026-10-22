@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 1.3.6 · **Utolsó frissítés:** 2026-10-23
+**Verzió:** 1.3.7 · **Utolsó frissítés:** 2026-10-23
 
 Egyetlen panel 42 ingyenes plágium- és MI-generált szöveg felismerő eszközhöz, plusz egy hivatkozásgenerátor.
 
@@ -52,7 +52,7 @@ Billentyűzet: az Enter a hivatkozásgenerátor mezőjében futtatja azt; az Esc
 
 ## Adatvédelem és hálózat
 
-- Helyben: a `localStorage`-ban csak a felület nyelve (`fdh_lang`) tárolódik. A szöveged nem mentődik.
+- Helyben: a `localStorage`-ban csak a felület nyelve (`freedetect.lang`) tárolódik. A szöveged nem mentődik.
 - A beillesztett szöveget az alkalmazás sehová nem küldi el. Az oldal egyetlen hálózati kérései a hivatkozásgenerátoréi, használatakor: `api.crossref.org` (DOI és vizsgálat) és `openlibrary.org` (ISBN).
 - A Crossrefnek küldött kérések tartalmazzák a lekérdezett DOI-t, az IP-címedet és a `mailto=alexio@trom.tf` paramétert (a szerző elérhetőségi címe, a „polite pool” használatához); az OpenLibrarynek küldöttek az ISBN-t és az IP-t. A „Scan input text” a Crossrefnek csak a szövegben talált DOI-kat küldi el, nem a teljes szöveget.
 - Amikor a „Check here” funkciót használod, a szöveg a te beillesztésed révén jut el a kiválasztott harmadik fél szolgáltatásához, és annak szabályzata vonatkozik rá.
@@ -82,6 +82,10 @@ A FreeDetect Hub egyfájlos HTML-irányítópult, amely 42 kézzel válogatott i
 Audit: 2026-10-10 (2. kör, 2026-10-11: a harmadik féltől származó komponensekhez hozzáadva a NOTICE.md; megjegyzés a humanizer eszközökről) — ellenőrizve: a beillesztett szöveg nem hagyja el az oldalt (CSP `connect-src` csak `api.crossref.org` és `openlibrary.org`); javítva egy hozzáférhető név nélküli hivatkozás (az „Open in new tab” szalag) és a konzolzaj, amelyet a CSP meta címkében lévő `frame-ancestors` okozott (az irányelvet a meta címke figyelmen kívül hagyja; a keretbe ágyazás elleni védelemhez HTTP-fejléc kell).
 
 ## Előzmények / Changelog
+
+### 1.3.7 — 2026-10-23
+
+- Tárolás: a kulcsok mostantól az alkalmazás előtagját viselik (`freedetect.lang`); a meglévő adatok indításkor automatikusan átkerülnek a régi kulcsokból (`fdh_lang`), a régebbi `.fff.json` mentések pedig továbbra is importálhatók (fff-kit 1.2.0).
 
 ### 1.3.5 — 2026-10-22
 

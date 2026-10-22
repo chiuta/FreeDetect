@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 1.3.6 · **Última actualización:** 2026-10-23
+**Versión:** 1.3.7 · **Última actualización:** 2026-10-23
 
 Un panel único para 42 herramientas gratuitas de detección de plagio y de texto generado por IA, además de un generador de citas.
 
@@ -52,7 +52,7 @@ Teclado: Intro en el campo del generador de citas lo ejecuta; Escape en el campo
 
 ## Privacidad y red
 
-- Local: en `localStorage` solo se conserva el idioma de la interfaz (`fdh_lang`). Tu texto no se guarda.
+- Local: en `localStorage` solo se conserva el idioma de la interfaz (`freedetect.lang`). Tu texto no se guarda.
 - La aplicación no envía a ninguna parte el texto pegado. Las únicas solicitudes de red de la página son las del generador de citas, cuando se acciona: `api.crossref.org` (DOI y análisis) y `openlibrary.org` (ISBN).
 - Las solicitudes a Crossref contienen el DOI consultado, tu dirección IP y el parámetro `mailto=alexio@trom.tf` (la dirección de contacto del autor, usada para el «polite pool»); las dirigidas a OpenLibrary contienen el ISBN y la IP. «Scan input text» envía a Crossref solo los DOI encontrados en el texto, no el texto completo.
 - Cuando usas «Check here», el texto llega, mediante tu pegado, al servicio de terceros elegido y queda sujeto a su política.
@@ -83,6 +83,10 @@ FreeDetect Hub es un panel HTML de un único archivo con enlaces a 42 herramient
 Auditoría: 2026-10-10 (ronda 2, 2026-10-11: añadido NOTICE.md para los componentes de terceros; nota sobre las herramientas humanizer) — verificado: el texto pegado no sale de la página (CSP `connect-src` solo `api.crossref.org` y `openlibrary.org`); corregido un enlace sin nombre accesible (el banner «Open in new tab») y el ruido en la consola causado por `frame-ancestors` en el meta CSP (la directiva se ignora en meta; la protección frente a la inclusión en marcos exige una cabecera HTTP).
 
 ## Historial / Changelog
+
+### 1.3.7 — 2026-10-23
+
+- Almacenamiento: las claves llevan ahora el prefijo de la aplicación (`freedetect.lang`); los datos existentes se migran automáticamente al iniciar desde las claves antiguas (`fdh_lang`) y las copias `.fff.json` antiguas se siguen importando (fff-kit 1.2.0).
 
 ### 1.3.5 — 2026-10-22
 

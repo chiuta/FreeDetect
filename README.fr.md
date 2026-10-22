@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 1.3.6 · **Dernière mise à jour :** 2026-10-23
+**Version :** 1.3.7 · **Dernière mise à jour :** 2026-10-23
 
 Un panneau unique pour 42 outils gratuits de détection du plagiat et des textes générés par l'IA, plus un générateur de citations.
 
@@ -52,7 +52,7 @@ Clavier : Entrée dans le champ du générateur de citations le lance ; Échap d
 
 ## Confidentialité et réseau
 
-- En local : seule la langue de l'interface (`fdh_lang`) est conservée dans `localStorage`. Votre texte n'est pas enregistré.
+- En local : seule la langue de l'interface (`freedetect.lang`) est conservée dans `localStorage`. Votre texte n'est pas enregistré.
 - Le texte collé n'est envoyé nulle part par l'application. Les seules requêtes réseau de la page sont celles du générateur de citations, lorsqu'on l'utilise : `api.crossref.org` (DOI et analyse) et `openlibrary.org` (ISBN).
 - Les requêtes vers Crossref contiennent le DOI interrogé, votre adresse IP et le paramètre `mailto=alexio@trom.tf` (l'adresse de contact de l'auteur, utilisée pour le « polite pool ») ; celles vers OpenLibrary contiennent l'ISBN et l'IP. « Scan input text » n'envoie à Crossref que les DOI trouvés dans le texte, pas le texte entier.
 - Quand vous utilisez « Check here », le texte parvient, par votre collage, au service tiers choisi et relève de sa politique.
@@ -83,6 +83,10 @@ FreeDetect Hub est un tableau de bord HTML en un seul fichier qui renvoie vers 4
 Audit : 2026-10-10 (tour 2, 2026-10-11 : NOTICE.md ajouté pour les composants tiers ; note sur les outils humanizer) — vérifié : le texte collé ne quitte pas la page (CSP `connect-src` uniquement `api.crossref.org` et `openlibrary.org`) ; correction d'un lien sans nom accessible (le bandeau « Open in new tab ») et du bruit dans la console causé par `frame-ancestors` dans la balise meta CSP (la directive est ignorée dans meta ; la protection contre l'inclusion en cadre exige un en-tête HTTP).
 
 ## Historique / Changelog
+
+### 1.3.7 — 2026-10-23
+
+- Stockage : les clés portent désormais le préfixe de l'application (`freedetect.lang`) ; les données existantes sont migrées automatiquement au démarrage depuis les anciennes clés (`fdh_lang`), et les anciennes sauvegardes `.fff.json` s'importent toujours (fff-kit 1.2.0).
 
 ### 1.3.5 — 2026-10-22
 

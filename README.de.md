@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 1.3.6 · **Zuletzt aktualisiert:** 2026-10-23
+**Version:** 1.3.7 · **Zuletzt aktualisiert:** 2026-10-23
 
 Ein einziges Panel für 42 kostenlose Werkzeuge zur Erkennung von Plagiaten und KI-generierten Texten, plus ein Zitationsgenerator.
 
@@ -52,7 +52,7 @@ Tastatur: Die Eingabetaste im Feld des Zitationsgenerators führt ihn aus; Escap
 
 ## Datenschutz und Netzwerk
 
-- Lokal: Im `localStorage` wird nur die Oberflächensprache (`fdh_lang`) gespeichert. Dein Text wird nicht gespeichert.
+- Lokal: Im `localStorage` wird nur die Oberflächensprache (`freedetect.lang`) gespeichert. Dein Text wird nicht gespeichert.
 - Der eingefügte Text wird von der App nirgendwohin gesendet. Die einzigen Netzwerkanfragen der Seite sind die des Zitationsgenerators, wenn er betätigt wird: `api.crossref.org` (DOI und Scan) und `openlibrary.org` (ISBN).
 - Die Anfragen an Crossref enthalten die abgefragte DOI, deine IP-Adresse und den Parameter `mailto=alexio@trom.tf` (die Kontaktadresse des Autors, verwendet für den „polite pool“); die an OpenLibrary enthalten die ISBN und die IP. „Scan input text“ sendet an Crossref nur die im Text gefundenen DOIs, nicht den ganzen Text.
 - Wenn du „Check here“ verwendest, gelangt der Text durch dein Einfügen zum gewählten Drittanbieter-Dienst und unterliegt dessen Richtlinien.
@@ -83,6 +83,10 @@ FreeDetect Hub ist ein HTML-Dashboard in einer einzigen Datei mit Links zu 42 ha
 Audit: 2026-10-10 (Runde 2, 2026-10-11: NOTICE.md für die Drittanbieter-Komponenten hinzugefügt; Hinweis zu den Humanizer-Werkzeugen) — geprüft: Der eingefügte Text verlässt die Seite nicht (CSP `connect-src` nur `api.crossref.org` und `openlibrary.org`); ein Link ohne zugänglichen Namen (das Banner „Open in new tab“) und das Konsolenrauschen durch `frame-ancestors` im CSP-Meta-Tag wurden behoben (die Direktive wird im Meta-Tag ignoriert; der Schutz vor dem Einbetten in Frames erfordert einen HTTP-Header).
 
 ## Verlauf / Changelog
+
+### 1.3.7 — 2026-10-23
+
+- Speicher: Die Schlüssel tragen jetzt das App-Präfix (`freedetect.lang`); vorhandene Daten werden beim Start automatisch von den alten Schlüsseln (`fdh_lang`) übernommen, und ältere `.fff.json`-Sicherungen lassen sich weiterhin importieren (fff-kit 1.2.0).
 
 ### 1.3.5 — 2026-10-22
 

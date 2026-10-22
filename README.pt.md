@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 1.3.6 · **Última atualização:** 2026-10-23
+**Versão:** 1.3.7 · **Última atualização:** 2026-10-23
 
 Um painel único para 42 ferramentas gratuitas de deteção de plágio e de texto gerado por IA, mais um gerador de citações.
 
@@ -52,7 +52,7 @@ Teclado: Enter no campo do gerador de citações executa-o; Escape no campo de p
 
 ## Privacidade e rede
 
-- Local: no `localStorage` guarda-se apenas o idioma da interface (`fdh_lang`). O seu texto não é guardado.
+- Local: no `localStorage` guarda-se apenas o idioma da interface (`freedetect.lang`). O seu texto não é guardado.
 - O texto colado não é enviado para lado nenhum pela aplicação. Os únicos pedidos de rede da página são os do gerador de citações, quando é acionado: `api.crossref.org` (DOI e análise) e `openlibrary.org` (ISBN).
 - Os pedidos ao Crossref contêm o DOI consultado, o seu endereço IP e o parâmetro `mailto=alexio@trom.tf` (o endereço de contacto do autor, usado para o «polite pool»); os dirigidos ao OpenLibrary contêm o ISBN e o IP. «Scan input text» envia ao Crossref apenas os DOI encontrados no texto, não o texto inteiro.
 - Quando usa «Check here», o texto chega, através da sua colagem, ao serviço de terceiros escolhido e fica sujeito à respetiva política.
@@ -83,6 +83,10 @@ O FreeDetect Hub é um painel HTML num único ficheiro com ligações para 42 fe
 Auditoria: 2026-10-10 (ronda 2, 2026-10-11: NOTICE.md adicionado para os componentes de terceiros; nota sobre as ferramentas humanizer) — verificado: o texto colado não sai da página (CSP `connect-src` apenas `api.crossref.org` e `openlibrary.org`); corrigida uma ligação sem nome acessível (o banner «Open in new tab») e o ruído na consola causado por `frame-ancestors` no meta CSP (a diretiva é ignorada em meta; a proteção contra a inclusão em frames exige um cabeçalho HTTP).
 
 ## Histórico / Changelog
+
+### 1.3.7 — 2026-10-23
+
+- Armazenamento: as chaves passam a ter o prefixo da aplicação (`freedetect.lang`); os dados existentes são migrados automaticamente no arranque a partir das chaves antigas (`fdh_lang`) e as cópias `.fff.json` antigas continuam a ser importadas (fff-kit 1.2.0).
 
 ### 1.3.5 — 2026-10-22
 

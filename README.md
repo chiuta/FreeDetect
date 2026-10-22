@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.3.6 · **Last updated:** 2026-10-23
+**Version:** 1.3.7 · **Last updated:** 2026-10-23
 
 A single panel for 42 free plagiarism and AI-generated text detection tools, plus a citation generator.
 
@@ -52,7 +52,7 @@ Keyboard: Enter in the citation generator field runs it; Escape in the search fi
 
 ## Privacy and network
 
-- Local: only the interface language (`fdh_lang`) is kept in `localStorage`. Your text is not saved.
+- Local: only the interface language (`freedetect.lang`) is kept in `localStorage`. Your text is not saved.
 - The pasted text is not sent anywhere by the app. The only network requests of the page are those of the citation generator, when it is used: `api.crossref.org` (DOI and scan) and `openlibrary.org` (ISBN).
 - Requests to Crossref contain the queried DOI, your IP address and the parameter `mailto=alexio@trom.tf` (the author's contact address, used for the "polite pool"); those to OpenLibrary contain the ISBN and the IP. "Scan input text" sends to Crossref only the DOIs found in the text, not the whole text.
 - When you use "Check here", the text reaches the chosen third-party service through your pasting and falls under its policy.
@@ -83,6 +83,10 @@ FreeDetect Hub is a single-file HTML dashboard linking to 42 hand-picked free pl
 Audit: 2026-10-10 (round 2, 2026-10-11: NOTICE.md added for the third-party components; note about humanizer tools) — verified: the pasted text does not leave the page (CSP `connect-src` only `api.crossref.org` and `openlibrary.org`); fixed a link without an accessible name (the "Open in new tab" banner) and the console noise caused by `frame-ancestors` in the CSP meta tag (the directive is ignored in meta; framing protection requires an HTTP header).
 
 ## History / Changelog
+
+### 1.3.7 — 2026-10-23
+
+- Storage: keys now carry the app prefix (`freedetect.lang`); existing data is migrated automatically at startup from the old key(s) (`fdh_lang`), and older `.fff.json` backups still import (fff-kit 1.2.0).
 
 ### 1.3.5 — 2026-10-22
 

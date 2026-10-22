@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.3.6 · **Ultima actualizare:** 2026-10-23
+**Versiune:** 1.3.7 · **Ultima actualizare:** 2026-10-23
 
 Un panou unic pentru 42 de instrumente gratuite de detectare a plagiatului și a textului generat de AI, plus generator de citări.
 
@@ -52,7 +52,7 @@ Tastatura: Enter în câmpul generatorului de citări îl rulează; Escape în c
 
 ## Confidențialitate și rețea
 
-- Local: în `localStorage` se reține doar limba interfeței (`fdh_lang`). Textul tău nu este salvat.
+- Local: în `localStorage` se reține doar limba interfeței (`freedetect.lang`). Textul tău nu este salvat.
 - Textul lipit nu este trimis nicăieri de aplicație. Singurele cereri de rețea ale paginii sunt cele ale generatorului de citări, la acționarea lui: `api.crossref.org` (DOI și scanare) și `openlibrary.org` (ISBN).
 - Cererile către Crossref conțin DOI-ul interogat, adresa ta IP și parametrul `mailto=alexio@trom.tf` (adresa de contact a autorului, folosită pentru „polite pool”); cele către OpenLibrary conțin ISBN-ul și IP-ul. „Scan input text” trimite către Crossref doar DOI-urile găsite în text, nu textul întreg.
 - Când folosești „Check here", textul ajunge, prin lipirea ta, la serviciul terț ales și intră sub politica acestuia.
@@ -83,6 +83,10 @@ FreeDetect Hub este un panou într-un singur fișier HTML cu linkuri către 42 d
 Audit: 2026-10-10 (rundă 2, 2026-10-11: NOTICE.md adăugat pentru componentele terțe; notă despre instrumentele humanizer) — verificat: textul lipit nu pleacă din pagină (CSP `connect-src` doar `api.crossref.org` și `openlibrary.org`); corectat un link fără nume accesibil (bannerul „Open in new tab”) și zgomotul din consolă cauzat de `frame-ancestors` în meta CSP (directiva este ignorată în meta; protecția la framing cere antet HTTP).
 
 ## Istoric / Changelog
+
+### 1.3.7 — 2026-10-23
+
+- Stocare: cheile poartă acum prefixul aplicației (`freedetect.lang`); datele existente se mută automat la pornire din cheile vechi (`fdh_lang`), iar copiile `.fff.json` mai vechi se importă în continuare (fff-kit 1.2.0).
 
 ### 1.3.5 — 2026-10-22
 

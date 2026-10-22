@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 1.3.6 · **Ultimo aggiornamento:** 2026-10-23
+**Versione:** 1.3.7 · **Ultimo aggiornamento:** 2026-10-23
 
 Un pannello unico per 42 strumenti gratuiti di rilevamento del plagio e dei testi generati dall'IA, più un generatore di citazioni.
 
@@ -52,7 +52,7 @@ Tastiera: Invio nel campo del generatore di citazioni lo avvia; Esc nel campo di
 
 ## Privacy e rete
 
-- In locale: in `localStorage` viene conservata solo la lingua dell'interfaccia (`fdh_lang`). Il tuo testo non viene salvato.
+- In locale: in `localStorage` viene conservata solo la lingua dell'interfaccia (`freedetect.lang`). Il tuo testo non viene salvato.
 - Il testo incollato non viene inviato da nessuna parte dall'app. Le uniche richieste di rete della pagina sono quelle del generatore di citazioni, quando lo si usa: `api.crossref.org` (DOI e scansione) e `openlibrary.org` (ISBN).
 - Le richieste a Crossref contengono il DOI interrogato, il tuo indirizzo IP e il parametro `mailto=alexio@trom.tf` (l'indirizzo di contatto dell'autore, usato per il «polite pool»); quelle a OpenLibrary contengono l'ISBN e l'IP. «Scan input text» invia a Crossref solo i DOI trovati nel testo, non il testo intero.
 - Quando usi «Check here», il testo arriva, tramite il tuo incolla, al servizio di terzi scelto e ricade sotto la sua politica.
@@ -83,6 +83,10 @@ FreeDetect Hub è una dashboard HTML in un unico file con link a 42 strumenti gr
 Audit: 2026-10-10 (round 2, 2026-10-11: aggiunto NOTICE.md per i componenti di terzi; nota sugli strumenti humanizer) — verificato: il testo incollato non lascia la pagina (CSP `connect-src` solo `api.crossref.org` e `openlibrary.org`); corretto un link senza nome accessibile (il banner «Open in new tab») e il rumore nella console causato da `frame-ancestors` nel meta CSP (la direttiva viene ignorata nel meta; la protezione dall'inclusione in frame richiede un'intestazione HTTP).
 
 ## Cronologia / Changelog
+
+### 1.3.7 — 2026-10-23
+
+- Archiviazione: le chiavi ora hanno il prefisso dell'app (`freedetect.lang`); i dati esistenti vengono migrati automaticamente all'avvio dalle vecchie chiavi (`fdh_lang`) e i vecchi backup `.fff.json` si importano ancora (fff-kit 1.2.0).
 
 ### 1.3.5 — 2026-10-22
 
