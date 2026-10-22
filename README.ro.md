@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.3.4 · **Ultima actualizare:** 2026-10-22
+**Versiune:** 1.3.5 · **Ultima actualizare:** 2026-10-22
 
 Un panou unic pentru 42 de instrumente gratuite de detectare a plagiatului și a textului generat de AI, plus generator de citări.
 
@@ -83,6 +83,10 @@ FreeDetect Hub este un panou într-un singur fișier HTML cu linkuri către 42 d
 Audit: 2026-10-10 (rundă 2, 2026-10-11: NOTICE.md adăugat pentru componentele terțe; notă despre instrumentele humanizer) — verificat: textul lipit nu pleacă din pagină (CSP `connect-src` doar `api.crossref.org` și `openlibrary.org`); corectat un link fără nume accesibil (bannerul „Open in new tab”) și zgomotul din consolă cauzat de `frame-ancestors` în meta CSP (directiva este ignorată în meta; protecția la framing cere antet HTTP).
 
 ## Istoric / Changelog
+
+### 1.3.5 — 2026-10-22
+
+fff-kit 1.1.4: ținte tactile și text minim. Ținte tactile/text corectate în aplicație.
 
 ### 1.3.4 — 2026-10-22
 

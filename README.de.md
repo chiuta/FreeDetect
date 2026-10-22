@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 1.3.4 · **Zuletzt aktualisiert:** 2026-10-22
+**Version:** 1.3.5 · **Zuletzt aktualisiert:** 2026-10-22
 
 Ein einziges Panel für 42 kostenlose Werkzeuge zur Erkennung von Plagiaten und KI-generierten Texten, plus ein Zitationsgenerator.
 
@@ -83,6 +83,10 @@ FreeDetect Hub ist ein HTML-Dashboard in einer einzigen Datei mit Links zu 42 ha
 Audit: 2026-10-10 (Runde 2, 2026-10-11: NOTICE.md für die Drittanbieter-Komponenten hinzugefügt; Hinweis zu den Humanizer-Werkzeugen) — geprüft: Der eingefügte Text verlässt die Seite nicht (CSP `connect-src` nur `api.crossref.org` und `openlibrary.org`); ein Link ohne zugänglichen Namen (das Banner „Open in new tab“) und das Konsolenrauschen durch `frame-ancestors` im CSP-Meta-Tag wurden behoben (die Direktive wird im Meta-Tag ignoriert; der Schutz vor dem Einbetten in Frames erfordert einen HTTP-Header).
 
 ## Verlauf / Changelog
+
+### 1.3.5 — 2026-10-22
+
+fff-kit 1.1.4: Touch-Ziele und Mindestschriftgröße. Touch-Ziele/Text in der App korrigiert.
 
 ### 1.3.4 — 2026-10-22
 

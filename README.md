@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.3.4 · **Last updated:** 2026-10-22
+**Version:** 1.3.5 · **Last updated:** 2026-10-22
 
 A single panel for 42 free plagiarism and AI-generated text detection tools, plus a citation generator.
 
@@ -83,6 +83,10 @@ FreeDetect Hub is a single-file HTML dashboard linking to 42 hand-picked free pl
 Audit: 2026-10-10 (round 2, 2026-10-11: NOTICE.md added for the third-party components; note about humanizer tools) — verified: the pasted text does not leave the page (CSP `connect-src` only `api.crossref.org` and `openlibrary.org`); fixed a link without an accessible name (the "Open in new tab" banner) and the console noise caused by `frame-ancestors` in the CSP meta tag (the directive is ignored in meta; framing protection requires an HTTP header).
 
 ## History / Changelog
+
+### 1.3.5 — 2026-10-22
+
+fff-kit 1.1.4: touch targets and minimum text size. Touch targets/text fixed in the app.
 
 ### 1.3.4 — 2026-10-22
 
