@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.3.1 · **Last updated:** 2026-10-19
+**Version:** 1.3.2 · **Last updated:** 2026-10-22
 
 A single panel for 42 free plagiarism and AI-generated text detection tools, plus a citation generator.
 
@@ -83,6 +83,9 @@ FreeDetect Hub is a single-file HTML dashboard linking to 42 hand-picked free pl
 Audit: 2026-10-10 (round 2, 2026-10-11: NOTICE.md added for the third-party components; note about humanizer tools) — verified: the pasted text does not leave the page (CSP `connect-src` only `api.crossref.org` and `openlibrary.org`); fixed a link without an accessible name (the "Open in new tab" banner) and the console noise caused by `frame-ancestors` in the CSP meta tag (the directive is ignored in meta; framing protection requires an HTTP header).
 
 ## History / Changelog
+
+### 1.3.2 — 2026-10-22
+- Translation fix: the legal panels (privacy/GDPR, cookies, legal notice, terms, accessibility, technology) are now fully translated into Italian and Portuguese, the JavaScript-disabled notice lists all 8 languages, and "Impressum" is "Aviso legal" in Portuguese.
 
 ### 14 October 2026 (v1.1.0)
 - Personal data protection before copying to the clipboard (FFF.pii).
