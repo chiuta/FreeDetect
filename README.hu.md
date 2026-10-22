@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 1.3.3 · **Utolsó frissítés:** 2026-10-22
+**Verzió:** 1.3.4 · **Utolsó frissítés:** 2026-10-22
 
 Egyetlen panel 42 ingyenes plágium- és MI-generált szöveg felismerő eszközhöz, plusz egy hivatkozásgenerátor.
 
@@ -82,6 +82,10 @@ A FreeDetect Hub egyfájlos HTML-irányítópult, amely 42 kézzel válogatott i
 Audit: 2026-10-10 (2. kör, 2026-10-11: a harmadik féltől származó komponensekhez hozzáadva a NOTICE.md; megjegyzés a humanizer eszközökről) — ellenőrizve: a beillesztett szöveg nem hagyja el az oldalt (CSP `connect-src` csak `api.crossref.org` és `openlibrary.org`); javítva egy hozzáférhető név nélküli hivatkozás (az „Open in new tab” szalag) és a konzolzaj, amelyet a CSP meta címkében lévő `frame-ancestors` okozott (az irányelvet a meta címke figyelmen kívül hagyja; a keretbe ágyazás elleni védelemhez HTTP-fejléc kell).
 
 ## Előzmények / Changelog
+
+### 1.3.4 — 2026-10-22
+
+fff-kit 1.1.2: PBKDF2 600 000 iterációval, clickjacking elleni védelem.
 
 ### 1.3.3 — 2026-10-22
 - Olvashatóság mobilon: az eszköz- és profilcímkék 10–11 px-ről 12 px-re nőttek; a lábléc linkjei, a „helyi profil” összefoglaló és a fájlmező érintési célpontja legalább 24 px.

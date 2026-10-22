@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 1.3.3 · **Ultimo aggiornamento:** 2026-10-22
+**Versione:** 1.3.4 · **Ultimo aggiornamento:** 2026-10-22
 
 Un pannello unico per 42 strumenti gratuiti di rilevamento del plagio e dei testi generati dall'IA, più un generatore di citazioni.
 
@@ -83,6 +83,10 @@ FreeDetect Hub è una dashboard HTML in un unico file con link a 42 strumenti gr
 Audit: 2026-10-10 (round 2, 2026-10-11: aggiunto NOTICE.md per i componenti di terzi; nota sugli strumenti humanizer) — verificato: il testo incollato non lascia la pagina (CSP `connect-src` solo `api.crossref.org` e `openlibrary.org`); corretto un link senza nome accessibile (il banner «Open in new tab») e il rumore nella console causato da `frame-ancestors` nel meta CSP (la direttiva viene ignorata nel meta; la protezione dall'inclusione in frame richiede un'intestazione HTTP).
 
 ## Cronologia / Changelog
+
+### 1.3.4 — 2026-10-22
+
+fff-kit 1.1.2: PBKDF2 a 600.000 iterazioni, protezione anti-clickjacking.
 
 ### 1.3.3 — 2026-10-22
 - Leggibilità su mobile: le etichette degli strumenti e del profilo passano da 10–11 px a 12 px; i link del piè di pagina, il riepilogo «profilo locale» e il campo file hanno ora aree tattili di almeno 24 px.
