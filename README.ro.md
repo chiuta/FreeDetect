@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.3.5 · **Ultima actualizare:** 2026-10-22
+**Versiune:** 1.3.6 · **Ultima actualizare:** 2026-10-23
 
 Un panou unic pentru 42 de instrumente gratuite de detectare a plagiatului și a textului generat de AI, plus generator de citări.
 
