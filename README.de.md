@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 1.3.2 · **Zuletzt aktualisiert:** 2026-10-22
+**Version:** 1.3.3 · **Zuletzt aktualisiert:** 2026-10-22
 
 Ein einziges Panel für 42 kostenlose Werkzeuge zur Erkennung von Plagiaten und KI-generierten Texten, plus ein Zitationsgenerator.
 
@@ -83,6 +83,9 @@ FreeDetect Hub ist ein HTML-Dashboard in einer einzigen Datei mit Links zu 42 ha
 Audit: 2026-10-10 (Runde 2, 2026-10-11: NOTICE.md für die Drittanbieter-Komponenten hinzugefügt; Hinweis zu den Humanizer-Werkzeugen) — geprüft: Der eingefügte Text verlässt die Seite nicht (CSP `connect-src` nur `api.crossref.org` und `openlibrary.org`); ein Link ohne zugänglichen Namen (das Banner „Open in new tab“) und das Konsolenrauschen durch `frame-ancestors` im CSP-Meta-Tag wurden behoben (die Direktive wird im Meta-Tag ignoriert; der Schutz vor dem Einbetten in Frames erfordert einen HTTP-Header).
 
 ## Verlauf / Changelog
+
+### 1.3.3 — 2026-10-22
+- Lesbarkeit auf dem Handy: Die Tool- und Profil-Beschriftungen wurden von 10–11 px auf 12 px vergrößert; Fußzeilen-Links, die Zusammenfassung „Lokales Profil“ und das Dateifeld haben jetzt Touch-Ziele von mindestens 24 px.
 
 ### 1.3.2 — 2026-10-22
 - Übersetzungskorrektur: Die rechtlichen Bereiche (Datenschutz/DSGVO, Cookies, Impressum, Nutzungsbedingungen, Barrierefreiheit, Technik) sind jetzt vollständig ins Italienische und Portugiesische übersetzt, der Hinweis bei deaktiviertem JavaScript erscheint in allen 8 Sprachen, und „Impressum“ heißt im Portugiesischen „Aviso legal“.

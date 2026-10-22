@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 1.3.2 · **Última atualização:** 2026-10-22
+**Versão:** 1.3.3 · **Última atualização:** 2026-10-22
 
 Um painel único para 42 ferramentas gratuitas de deteção de plágio e de texto gerado por IA, mais um gerador de citações.
 
@@ -83,6 +83,9 @@ O FreeDetect Hub é um painel HTML num único ficheiro com ligações para 42 fe
 Auditoria: 2026-10-10 (ronda 2, 2026-10-11: NOTICE.md adicionado para os componentes de terceiros; nota sobre as ferramentas humanizer) — verificado: o texto colado não sai da página (CSP `connect-src` apenas `api.crossref.org` e `openlibrary.org`); corrigida uma ligação sem nome acessível (o banner «Open in new tab») e o ruído na consola causado por `frame-ancestors` no meta CSP (a diretiva é ignorada em meta; a proteção contra a inclusão em frames exige um cabeçalho HTTP).
 
 ## Histórico / Changelog
+
+### 1.3.3 — 2026-10-22
+- Legibilidade em telemóvel: as etiquetas das ferramentas e do perfil passam de 10–11 px para 12 px; as ligações do rodapé, o resumo «perfil local» e o campo de ficheiro têm agora áreas táteis de pelo menos 24 px.
 
 ### 1.3.2 — 2026-10-22
 - Correção de tradução: os painéis jurídicos (privacidade/RGPD, cookies, aviso legal, termos, acessibilidade, tecnologia) estão agora totalmente traduzidos para italiano e português, o aviso de JavaScript desativado surge nos 8 idiomas e «Impressum» passa a «Aviso legal» em português.
