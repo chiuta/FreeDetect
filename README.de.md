@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 1.3.7 · **Zuletzt aktualisiert:** 2026-10-23
+**Version:** 1.3.8 · **Zuletzt aktualisiert:** 2026-10-23
 
 Ein einziges Panel für 42 kostenlose Werkzeuge zur Erkennung von Plagiaten und KI-generierten Texten, plus ein Zitationsgenerator.
 
@@ -83,6 +83,10 @@ FreeDetect Hub ist ein HTML-Dashboard in einer einzigen Datei mit Links zu 42 ha
 Audit: 2026-10-10 (Runde 2, 2026-10-11: NOTICE.md für die Drittanbieter-Komponenten hinzugefügt; Hinweis zu den Humanizer-Werkzeugen) — geprüft: Der eingefügte Text verlässt die Seite nicht (CSP `connect-src` nur `api.crossref.org` und `openlibrary.org`); ein Link ohne zugänglichen Namen (das Banner „Open in new tab“) und das Konsolenrauschen durch `frame-ancestors` im CSP-Meta-Tag wurden behoben (die Direktive wird im Meta-Tag ignoriert; der Schutz vor dem Einbetten in Frames erfordert einen HTTP-Header).
 
 ## Verlauf / Changelog
+
+### 1.3.8 — 2026-10-23
+
+- Fix: the citation generator no longer reports “no connection” for valid but incomplete Crossref/Open Library responses (missing date, nameless authors, empty publishers); CSP hash recalculated.
 
 ### 1.3.7 — 2026-10-23
 

@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.3.7 · **Ultima actualizare:** 2026-10-23
+**Versiune:** 1.3.8 · **Ultima actualizare:** 2026-10-23
 
 Un panou unic pentru 42 de instrumente gratuite de detectare a plagiatului și a textului generat de AI, plus generator de citări.
 
@@ -83,6 +83,10 @@ FreeDetect Hub este un panou într-un singur fișier HTML cu linkuri către 42 d
 Audit: 2026-10-10 (rundă 2, 2026-10-11: NOTICE.md adăugat pentru componentele terțe; notă despre instrumentele humanizer) — verificat: textul lipit nu pleacă din pagină (CSP `connect-src` doar `api.crossref.org` și `openlibrary.org`); corectat un link fără nume accesibil (bannerul „Open in new tab”) și zgomotul din consolă cauzat de `frame-ancestors` în meta CSP (directiva este ignorată în meta; protecția la framing cere antet HTTP).
 
 ## Istoric / Changelog
+
+### 1.3.8 — 2026-10-23
+
+- Corectat: generatorul de citări nu mai afișează „fără conexiune” pentru răspunsuri Crossref/Open Library valide dar incomplete (fără dată, autori fără nume, editori goi); hash CSP recalculat.
 
 ### 1.3.7 — 2026-10-23
 
