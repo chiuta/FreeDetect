@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.3.8 · **Last updated:** 2026-10-23
+**Version:** 1.3.9 · **Last updated:** 2026-10-26
 
 A single panel for 42 free plagiarism and AI-generated text detection tools, plus a citation generator.
 

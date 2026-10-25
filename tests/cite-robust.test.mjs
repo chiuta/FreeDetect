@@ -1,4 +1,4 @@
-// Teste 1.3.8: generatorul de citări tolerează răspunsuri Crossref/Open Library valide dar incomplete și nu injectează HTML.
+// Teste 1.3.9: generatorul de citări tolerează răspunsuri Crossref/Open Library valide dar incomplete și nu injectează HTML.
 // Rulare: node tests/cite-robust.test.mjs  (Playwright din /opt/node-tools, Chromium local; rețeaua e simulată prin route)
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
