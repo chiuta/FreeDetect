@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.3.9 · **Last updated:** 2026-10-26
+**Version:** 2.0.0 · **Last updated:** 2026-10-26
 
 A single panel for 42 free plagiarism and AI-generated text detection tools, plus a citation generator.
 
@@ -36,6 +36,12 @@ The app does not do the checking itself: it is a catalog and a workflow aid. The
 - **"Export profile (.md)"**: saves the local text profile as a Markdown file (statistics, not the text).
 - The shared "fff-kit" modules are included; the `.fff.json` copy from the version dialog contains only the interface language.
 - The new texts are in all 15 interface languages; **the translations have not been checked by native speakers.**
+
+## New features (2.0.0)
+
+- **Reference check panel**: paste a bibliography (one entry per line, per paragraph, or numbered `[1]`/`1.`) and every entry is validated locally: ISBN-10/13 check digit, DOI format (and old `dx.doi.org`/`http` links), impossible years (future or before 1450), APA/IEEE-like structure, author format and duplicates (same DOI/ISBN, identical or near-identical text).
+- Per-entry status (OK / review / error), **`.md` export** and **print** (dedicated sheet). Nothing leaves the browser; a valid format does not prove the source exists — use "Scan input text" (Crossref) for that.
+- New strings exist in 8 languages (ro, en, fr, de, es, pt, it, hu); other interface languages show English.
 
 ## User guide
 

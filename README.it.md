@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 1.3.9 · **Ultimo aggiornamento:** 2026-10-26
+**Versione:** 2.0.0 · **Ultimo aggiornamento:** 2026-10-26
 
 Un pannello unico per 42 strumenti gratuiti di rilevamento del plagio e dei testi generati dall'IA, più un generatore di citazioni.
 

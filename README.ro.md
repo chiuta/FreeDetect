@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.3.9 · **Ultima actualizare:** 2026-10-26
+**Versiune:** 2.0.0 · **Ultima actualizare:** 2026-10-26
 
 Un panou unic pentru 42 de instrumente gratuite de detectare a plagiatului și a textului generat de AI, plus generator de citări.
 
@@ -36,6 +36,12 @@ Aplicația nu face verificarea în sine: este un catalog și un ajutor de flux d
 - **„Export profile (.md)”**: salvează profilul local al textului ca fișier Markdown (statistici, nu textul).
 - Modulele comune „fff-kit” sunt incluse; copia `.fff.json` din dialogul versiunii cuprinde doar limba interfeței.
 - Textele noi sunt în toate cele 15 limbi ale interfeței; **traducerile nu au fost verificate de vorbitori nativi.**
+
+## Funcții noi (2.0.0)
+
+- **Dosar de verificare a referințelor** (panoul „Verificarea referințelor”): lipești o bibliografie (o intrare pe rând, pe paragraf sau numerotată `[1]`/`1.`) și fiecare intrare e validată local: cifra de control ISBN-10/13, formatul DOI (și linkurile `dx.doi.org`/`http`), anii imposibili (în viitor sau înainte de 1450), structura de tip APA/IEEE, formatul autorilor și duplicatele (același DOI/ISBN, același text sau aproape identic).
+- Raport cu stare pe intrare (în regulă / de revăzut / eroare), **export `.md`** și **tipărire** (foaie dedicată, fără restul paginii). Nimic nu pleacă din browser; un format valid nu dovedește că sursa există — pentru asta rămâne „Scan input text” (Crossref).
+- Textele noi sunt în 8 limbi (ro, en, fr, de, es, pt, it, hu); în celelalte limbi ale interfeței apar în engleză. Nu sunt incluse încă similaritatea între texte prin n-grame și istoricul rapoartelor.
 
 ## Manual de utilizare
 
