@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 2.0.0 · **Última actualización:** 2026-10-26
+**Versión:** 2.1.0 · **Última actualización:** 2026-10-27
+
+**Estado:** estable · **Offline:** requiere Internet para el generador de citas, el análisis/comprobación de DOI (Crossref, OpenLibrary, doi.org) y las herramientas externas
 
 Un panel único para 42 herramientas gratuitas de detección de plagio y de texto generado por IA, además de un generador de citas.
 

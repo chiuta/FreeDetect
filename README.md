@@ -2,7 +2,9 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 2.0.0 · **Last updated:** 2026-10-26
+**Version:** 2.1.0 · **Last updated:** 2026-10-27
+
+**Status:** stable · **Offline:** needs internet for the citation generator, the DOI scan/check (Crossref, OpenLibrary, doi.org) and the external tools
 
 A single panel for 42 free plagiarism and AI-generated text detection tools, plus a citation generator.
 
@@ -28,6 +30,9 @@ The app does not do the checking itself: it is a catalog and a workflow aid. The
 - "Scan input text": finds the DOIs in the text and checks them with Crossref, to flag possibly invented references.
 - Interface in 15 languages (🌐 selector): English, Romanian, French, German, Spanish, Portuguese, Italian, Dutch, Polish, Russian, Arabic, Chinese, Japanese, Korean, Turkish.
 - Privacy/GDPR, cookies and imprint pages, Buy Me a Coffee links.
+- **Warning about the reliability of AI detectors (2.1.0):** an open panel above the tool grid (8 languages) says that scores are estimates, not proof; that false positives are more frequent for non-native writers, formal/technical text and short texts, and that results for languages other than English (including Romanian) are even less reliable; and recommends not accusing anyone on a score alone (ask for drafts, version history, sources, an oral explanation; follow the institution's procedure). Sources: [Liang et al., "GPT detectors are biased against non-native English writers" (Patterns, 2023; arXiv:2304.02819)](https://arxiv.org/abs/2304.02819); [OpenAI withdrew its AI Text Classifier in July 2023 for low accuracy (Search Engine Land)](https://searchengineland.com/openai-ai-classifier-no-longer-available-429912).
+- **Online DOI check next to ISBN (2.1.0):** in the Reference check panel, "Check DOIs online" asks Crossref (and doi.org when Crossref does not know the DOI) for each DOI, on request: it reports DOIs that do not exist, DOIs registered elsewhere (e.g. DataCite - not treated as invented), titles that differ from the entry and different years. Only the DOIs are sent (max. 100 per run). The ISBN check stays local (check digit); a *valid DOI or ISBN still does not prove that the cited claim is in the source*.
+- "Scan input text" no longer calls a DOI registered outside Crossref (e.g. Zenodo/DataCite) "possibly invented".
 
 ## New features (1.1.0)
 
@@ -59,7 +64,7 @@ Keyboard: Enter in the citation generator field runs it; Escape in the search fi
 ## Privacy and network
 
 - Local: only the interface language (`freedetect.lang`) is kept in `localStorage`. Your text is not saved.
-- The pasted text is not sent anywhere by the app. The only network requests of the page are those of the citation generator, when it is used: `api.crossref.org` (DOI and scan) and `openlibrary.org` (ISBN).
+- The pasted text is not sent anywhere by the app. The only network requests of the page are those of the citation generator and of the DOI checks, when you use them: `api.crossref.org` (DOI, scan and online DOI check), `openlibrary.org` (ISBN) and, only for a DOI that Crossref does not know, `doi.org` (registration check; since 2.1.0).
 - Requests to Crossref contain the queried DOI, your IP address and the parameter `mailto=alexio@trom.tf` (the author's contact address, used for the "polite pool"); those to OpenLibrary contain the ISBN and the IP. "Scan input text" sends to Crossref only the DOIs found in the text, not the whole text.
 - When you use "Check here", the text reaches the chosen third-party service through your pasting and falls under its policy.
 - The page contains links (not automatic requests) to dozens of third-party services, to Buy Me a Coffee and to the author's sites.
@@ -89,6 +94,12 @@ FreeDetect Hub is a single-file HTML dashboard linking to 42 hand-picked free pl
 Audit: 2026-10-10 (round 2, 2026-10-11: NOTICE.md added for the third-party components; note about humanizer tools) — verified: the pasted text does not leave the page (CSP `connect-src` only `api.crossref.org` and `openlibrary.org`); fixed a link without an accessible name (the "Open in new tab" banner) and the console noise caused by `frame-ancestors` in the CSP meta tag (the directive is ignored in meta; framing protection requires an HTTP header).
 
 ## History / Changelog
+
+### 2.1.0 — 2026-10-27
+- Visible warning panel about the unreliability of AI detectors (8 languages) with sources in the README.
+- Optional online DOI check in the Reference check panel (Crossref, then doi.org); "Scan input text" no longer flags non-Crossref DOIs as invented.
+- Reports now show the real app version; `https://doi.org` added to the CSP `connect-src`.
+- New test: `tests/doi-ai.test.mjs`.
 
 ### 1.3.8 — 2026-10-23
 
