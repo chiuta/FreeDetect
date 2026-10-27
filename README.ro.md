@@ -2,7 +2,9 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 2.0.0 · **Ultima actualizare:** 2026-10-26
+**Versiune:** 2.1.0 · **Ultima actualizare:** 2026-10-27
+
+**Stare:** stabil · **Offline:** cere internet pentru generatorul de citări, scanarea și verificarea DOI (Crossref, OpenLibrary, doi.org) și instrumentele externe
 
 Un panou unic pentru 42 de instrumente gratuite de detectare a plagiatului și a textului generat de AI, plus generator de citări.
 
@@ -28,6 +30,9 @@ Aplicația nu face verificarea în sine: este un catalog și un ajutor de flux d
 - „Scan input text": găsește DOI-urile din text și le verifică la Crossref, pentru a semnala referințe posibil inventate.
 - Interfață în 15 limbi (selector 🌐): engleză, română, franceză, germană, spaniolă, portugheză, italiană, olandeză, poloneză, rusă, arabă, chineză, japoneză, coreeană, turcă.
 - Pagini de confidențialitate/GDPR, cookies și impressum, link-uri Buy Me a Coffee.
+- **Avertizare despre fiabilitatea detectoarelor AI (2.1.0):** un panou deschis deasupra grilei de instrumente (8 limbi) spune că scorurile sunt estimări, nu dovezi; că fals pozitivele sunt mai frecvente pentru autori non-nativi, text formal/tehnic și texte scurte, iar rezultatele pentru alte limbi decât engleza (inclusiv română) sunt și mai puțin de încredere; și recomandă să nu acuzi pe nimeni doar pe baza unui scor (cere ciorne, istoricul versiunilor, surse, o explicație orală; urmează procedura instituției). Surse: [Liang et al., „GPT detectors are biased against non-native English writers” (Patterns, 2023; arXiv:2304.02819)](https://arxiv.org/abs/2304.02819); [OpenAI și-a retras AI Text Classifier în iulie 2023 pentru acuratețe scăzută (Search Engine Land)](https://searchengineland.com/openai-ai-classifier-no-longer-available-429912).
+- **Verificare online a DOI, pe lângă ISBN (2.1.0):** în panoul Verificarea referințelor, „Verifică DOI-urile online” întreabă, la cerere, Crossref (și doi.org când Crossref nu cunoaște DOI-ul) pentru fiecare DOI: semnalează DOI inexistente, DOI înregistrate în alt registru (de ex. DataCite - nu sunt tratate ca inventate), titluri diferite de cel din intrare și ani diferiți. Se trimit doar DOI-urile (max. 100 per rulare). Verificarea ISBN rămâne locală (cifra de control); un *DOI sau ISBN valid tot nu dovedește că afirmația citată se află în sursă*.
+- „Scanează textul” nu mai numește „posibil inventat” un DOI înregistrat în afara Crossref (de ex. Zenodo/DataCite).
 
 ## Funcții noi (1.1.0)
 
@@ -59,7 +64,7 @@ Tastatura: Enter în câmpul generatorului de citări îl rulează; Escape în c
 ## Confidențialitate și rețea
 
 - Local: în `localStorage` se reține doar limba interfeței (`freedetect.lang`). Textul tău nu este salvat.
-- Textul lipit nu este trimis nicăieri de aplicație. Singurele cereri de rețea ale paginii sunt cele ale generatorului de citări, la acționarea lui: `api.crossref.org` (DOI și scanare) și `openlibrary.org` (ISBN).
+- Textul lipit nu este trimis nicăieri de aplicație. Singurele cereri de rețea ale paginii sunt cele ale generatorului de citări și ale verificărilor DOI, la acționarea lor: `api.crossref.org` (DOI, scanare și verificarea online a DOI), `openlibrary.org` (ISBN) și, doar pentru un DOI necunoscut în Crossref, `doi.org` (verificarea înregistrării; din 2.1.0).
 - Cererile către Crossref conțin DOI-ul interogat, adresa ta IP și parametrul `mailto=alexio@trom.tf` (adresa de contact a autorului, folosită pentru „polite pool”); cele către OpenLibrary conțin ISBN-ul și IP-ul. „Scan input text” trimite către Crossref doar DOI-urile găsite în text, nu textul întreg.
 - Când folosești „Check here", textul ajunge, prin lipirea ta, la serviciul terț ales și intră sub politica acestuia.
 - Pagina conține link-uri (nu cereri automate) către zeci de servicii terțe, către Buy Me a Coffee și site-urile autorului.
@@ -89,6 +94,12 @@ FreeDetect Hub este un panou într-un singur fișier HTML cu linkuri către 42 d
 Audit: 2026-10-10 (rundă 2, 2026-10-11: NOTICE.md adăugat pentru componentele terțe; notă despre instrumentele humanizer) — verificat: textul lipit nu pleacă din pagină (CSP `connect-src` doar `api.crossref.org` și `openlibrary.org`); corectat un link fără nume accesibil (bannerul „Open in new tab”) și zgomotul din consolă cauzat de `frame-ancestors` în meta CSP (directiva este ignorată în meta; protecția la framing cere antet HTTP).
 
 ## Istoric / Changelog
+
+### 2.1.0 — 2026-10-27
+- Panou vizibil de avertizare despre nefiabilitatea detectoarelor AI (8 limbi), cu surse în README.
+- Verificare online opțională a DOI în panoul Verificarea referințelor (Crossref, apoi doi.org); „Scanează textul” nu mai semnalează DOI din afara Crossref ca inventate.
+- Rapoartele arată acum versiunea reală a aplicației; `https://doi.org` adăugat în CSP `connect-src`.
+- Test nou: `tests/doi-ai.test.mjs`.
 
 ### 1.3.8 — 2026-10-23
 
