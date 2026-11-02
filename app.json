@@ -2,8 +2,8 @@
   "schema": 1,
   "slug": "freedetect",
   "name": "FreeDetect Hub — Free Anti-Plagiarism & AI Detection Tools",
-  "version": "2.1.0",
-  "updated": "2026-10-27",
+  "version": "2.2.0",
+  "updated": "2026-11-02",
   "description": "A curated directory of free plagiarism and AI-detection tools. Paste your text once, check it everywhere.",
   "egress": [
     {
@@ -33,13 +33,13 @@
   "storageKeys": [
     "freedetect.lang"
   ],
-  "sizeBytes": 575296,
-  "sha256": "da96d60eb313d2f00f17563d76327a98779d32d40e14ded0f06f1fce7941a514",
+  "sizeBytes": 595352,
+  "sha256": "5df64340026677382f3b6407b850815949d3456c6a5058f15e920a74d38dcf23",
   "csp": {
     "present": true,
     "directives": {
       "default-src": "'self'",
-      "script-src": "'self' sha256×3",
+      "script-src": "'self' sha256×4",
       "style-src": "'self' 'unsafe-inline'",
       "img-src": "'self' data: blob:",
       "connect-src": "'self' https://api.crossref.org https://openlibrary.org https://doi.org",
@@ -73,6 +73,7 @@
       "dialog",
       "label",
       "bundle",
+      "bridge",
       "pii",
       "search"
     ]
@@ -85,6 +86,7 @@
       "dialog",
       "label",
       "bundle",
+      "bridge",
       "pii",
       "search"
     ]
