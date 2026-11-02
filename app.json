@@ -33,8 +33,8 @@
   "storageKeys": [
     "freedetect.lang"
   ],
-  "sizeBytes": 595309,
-  "sha256": "d7a0a115c696ecad27ec8a95fa34d6cf67fd7393112a9c61c49aa333bc8a992b",
+  "sizeBytes": 595352,
+  "sha256": "5df64340026677382f3b6407b850815949d3456c6a5058f15e920a74d38dcf23",
   "csp": {
     "present": true,
     "directives": {
