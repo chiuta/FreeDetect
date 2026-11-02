@@ -33,8 +33,8 @@
   "storageKeys": [
     "freedetect.lang"
   ],
-  "sizeBytes": 595369,
-  "sha256": "9ea7e07ab2de7c59b77f006eef9b24426b47c6d6a0f7a548161ccb909acf3209",
+  "sizeBytes": 735803,
+  "sha256": "3b05199577c524efeef22ec01337b9b6efce2fedd76ad15ea187a68bafcc9ce2",
   "csp": {
     "present": true,
     "directives": {
@@ -73,6 +73,10 @@
       "dialog",
       "label",
       "bundle",
+      "qr",
+      "p2p",
+      "sync",
+      "history",
       "bridge",
       "pii",
       "search"
@@ -86,6 +90,10 @@
       "dialog",
       "label",
       "bundle",
+      "qr",
+      "p2p",
+      "sync",
+      "history",
       "bridge",
       "pii",
       "search"
