@@ -1,4 +1,4 @@
-// Teste 2.1.0: avertizarea despre detectoarele AI (8 limbi) și verificarea online (la cerere) a DOI-urilor din referințe. Rețeaua e simulată.
+// Teste 2.2.0: avertizarea despre detectoarele AI (8 limbi) și verificarea online (la cerere) a DOI-urilor din referințe. Rețeaua e simulată.
 // Rulare: node tests/doi-ai.test.mjs
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -81,7 +81,7 @@ const n2 = await page.evaluate(() => refState.res.reduce((a, r) => a + r.msgs.le
 check('a doua rulare nu dublează mesajele', n1 === n2, [n1, n2]);
 const [dl] = await Promise.all([page.waitForEvent('download'), page.click('#refExp')]);
 const md = (await import('node:fs')).readFileSync(await dl.path(), 'utf8');
-check('raportul .md include rezultatele online și versiunea curentă', /does not exist/.test(md) && /FreeDetect Hub v2\.1\.0/.test(md), md.slice(-200));
+check('raportul .md include rezultatele online și versiunea curentă', /does not exist/.test(md) && /FreeDetect Hub v2\.2\.0/.test(md), md.slice(-200));
 // „Scan input text”: DOI din alt registru nu mai e numit „inventat”
 await page.evaluate(() => { document.querySelector('#citePanel').open = true; });
 await page.fill('#text', 'Vezi 10.5281/zenodo.12345 și 10.1000/ghostpaper în text.');
@@ -93,4 +93,4 @@ check('scan: DOI inexistent rămâne semnalat', /10\.1000\/ghostpaper — not in
 const keys = await page.evaluate(() => { const ks = ['aiwH', 'aiwP', 'aiwL1', 'aiwL2', 'aiwL3', 'aiwP2', 'refDoi', 'refDoiTip', 'refDoiProg', 'refDoiDone', 'mDoiOk', 'mDoiOther', 'mDoiNone', 'mDoiNet', 'mDoiTitle', 'mDoiYear', 'mDoiSkip']; return ['en', 'ro', 'fr', 'de', 'es', 'pt', 'it', 'hu'].every((l) => ks.every((k) => I18N[l][k])); });
 check('chei noi în cele 8 limbi', keys);
 check('fără erori JS', errs.length === 0, errs);
-await b.close(); console.log(`\nFreeDetect 2.1.0: ${ok} ok, ${bad} eșuate`); process.exit(bad ? 1 : 0);
+await b.close(); console.log(`\nFreeDetect 2.2.0: ${ok} ok, ${bad} eșuate`); process.exit(bad ? 1 : 0);
