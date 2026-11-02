@@ -2,6 +2,10 @@
 
 Format: [SemVer](https://semver.org/lang/ro/) (MAJOR.MINOR.PATCH). Istoricul complet al versiunilor anterioare este în secțiunea „Istoric / Changelog” din [README.ro.md](README.ro.md).
 
+## 2.2.1 — 2026-11-02 (anterior: 2.2.0)
+
+- Surse actualizate (2026-11-02), în toate cele 16 limbi ale descrierilor: TinEye — 100 de căutări gratuite pe zi (nu 150) pentru uz necomercial, plus limita de 300/săptămână (help.tineye.com); Quetext — verificare gratuită până la 1000 de cuvinte (nu 500) (quetext.com/pricing); OpenAlex — peste 470 M de lucrări (477 M, blog.openalex.org).
+
 ## 2.2.0 — 2026-11-01
 
 - Corectat: adaptorul «Trimite la…» nu mai aruncă eroare când kitul FFF lipsește (gardian pe fiecare bloc; găsit de testul «fără kit» din CI).
