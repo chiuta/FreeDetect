@@ -2,7 +2,7 @@
   "schema": 1,
   "slug": "freedetect",
   "name": "FreeDetect Hub — Free Anti-Plagiarism & AI Detection Tools",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "updated": "2026-11-03",
   "description": "A curated directory of free plagiarism and AI-detection tools. Paste your text once, check it everywhere.",
   "egress": [
@@ -35,8 +35,8 @@
   "storageKeys": [
     "freedetect.lang"
   ],
-  "sizeBytes": 805283,
-  "sha256": "27a259270fe2c39f40d310036adbfdd322951a080a9f3829f00a66b7228ccda3",
+  "sizeBytes": 805306,
+  "sha256": "5f511b41317b414c1a232b68492f5513986fd228bbe84330c1ac13bd8926ab33",
   "csp": {
     "present": true,
     "directives": {
