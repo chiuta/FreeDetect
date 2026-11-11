@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 2.2.7 · **Last updated:** 2026-11-10
+**Version:** 2.2.8 · **Last updated:** 2026-11-10
 
 **Status:** stable · **Offline:** needs internet for the citation generator, the DOI scan/check (Crossref, OpenLibrary, doi.org) and the external tools
 
