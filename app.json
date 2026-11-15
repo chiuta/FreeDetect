@@ -30,18 +30,19 @@
     "serviceWorker",
     "localStorage",
     "Web Crypto",
+    "WebGL",
     "BroadcastChannel"
   ],
   "storageKeys": [
     "freedetect.lang"
   ],
-  "sizeBytes": 859416,
-  "sha256": "8c2ed39b74e4734197fe2ef7246015840f413de6afd51a64f87cd5238ae7d269",
+  "sizeBytes": 911423,
+  "sha256": "847161bdf5817b627dfb6cd8b39a912790bc1b6cc681507396dab1db9fa0a1de",
   "csp": {
     "present": true,
     "directives": {
       "default-src": "'self'",
-      "script-src": "'self' sha256×7",
+      "script-src": "'self' sha256×8",
       "style-src": "'self' 'unsafe-inline'",
       "img-src": "'self' data: blob:",
       "connect-src": "'self' https://api.crossref.org https://openlibrary.org https://doi.org",
