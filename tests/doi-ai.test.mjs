@@ -1,6 +1,7 @@
 // Teste 2.2.1: avertizarea despre detectoarele AI (8 limbi) și verificarea online (la cerere) a DOI-urilor din referințe. Rețeaua e simulată.
 // Rulare: node tests/doi-ai.test.mjs
 import path from 'node:path';
+import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {createRequire} from 'node:module';
 const require = createRequire(process.env.PW_ROOT || import.meta.url);
@@ -81,7 +82,8 @@ const n2 = await page.evaluate(() => refState.res.reduce((a, r) => a + r.msgs.le
 check('a doua rulare nu dublează mesajele', n1 === n2, [n1, n2]);
 const [dl] = await Promise.all([page.waitForEvent('download'), page.click('#refExp')]);
 const md = (await import('node:fs')).readFileSync(await dl.path(), 'utf8');
-check('raportul .md include rezultatele online și versiunea curentă', /does not exist/.test(md) && /FreeDetect Hub v2\.2\.\d+/.test(md), md.slice(-200));
+const APPVER = JSON.parse(readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'app.json'), 'utf8')).version;   // versiunea din raport = cea din app.json (nu un număr fixat în test)
+check('raportul .md include rezultatele online și versiunea curentă', /does not exist/.test(md) && md.includes('FreeDetect Hub v' + APPVER), md.slice(-200));
 // „Scan input text”: DOI din alt registru nu mai e numit „inventat”
 await page.evaluate(() => { document.querySelector('#citePanel').open = true; });
 await page.fill('#text', 'Vezi 10.5281/zenodo.12345 și 10.1000/ghostpaper în text.');
